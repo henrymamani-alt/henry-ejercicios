@@ -98,7 +98,7 @@ Docente: } Fred Torres Cruz\\
 \section*{Presentación del Trabajo}
 El presente trabajo encargado corresponde a la práctica de \textbf{Pilas (Stack) en C++}, orientada a comprender el principio de funcionamiento \textbf{LIFO} (\textit{Last In, First Out}) y sus operaciones fundamentales: \texttt{push()}, \texttt{pop()}, \texttt{top()} y \texttt{empty()}.
 
-Para cada uno de los cinco (5) problemas y la pregunta de cierre se incluye:
+Para cada uno de los cinco (5) problemas se incluye:
 \begin{enumerate}
     \item \textbf{Enunciado oficial} de la guía práctica.
     \item \textbf{Análisis y justificación algorítmica}.
@@ -525,46 +525,5 @@ int main() {
 
 \vspace{5mm}
 \hrule
-\newpage
-
-% ========================================================
-% PREGUNTA DE CIERRE
-% ========================================================
-\section*{Pregunta de Cierre: Análisis Común de los Cinco Problemas}
-\addcontentsline{toc}{section}{Pregunta de Cierre: Análisis Común de los Cinco Problemas}
-
-\noindent\textbf{Enunciado:}\\
-\textit{¿Qué característica común tienen los cinco problemas que hace apropiado utilizar una pila?}
-
-\subsection*{Fundamentación Teórica y Comparativa}
-La característica común a los cinco problemas es la \textbf{reversibilidad temporal y la precedencia del último elemento ingresado}, formalizada mediante el principio \textbf{LIFO} (\textit{Last In, First Out}):
-
-\begin{enumerate}
-    \item \textbf{Inversión de Secuencias (Ejercicios 1 y 2):} Tanto en el apilado de enteros como en la inversión de palabras, se requiere recuperar los datos en el orden cronológicamente inverso a como fueron leídos. La pila almacena el flujo secuencial y lo entrega en sentido contrario de manera automática y de costo constante $O(1)$ por operación.
-    
-    \item \textbf{Estructuras Anidadas y Simetría (Ejercicio 3):} En el balanceo de paréntesis, el elemento que se debe cerrar y comprobar es siempre el \textit{último} paréntesis de apertura que se abrió. Este comportamiento en capas (anidamiento) concuerda de forma exacta con la mecánica del tope de una pila.
-    
-    \item \textbf{Deshacer Estados Recientes (Ejercicio 4):} En un sistema de edición o transacción, la acción que debe anularse ante una solicitud de \textit{Undo} es forzosamente la más reciente en el tiempo. La pila modela de forma natural la línea temporal de comandos.
-    
-    \item \textbf{Generación Inversa de Resultados (Ejercicio 5):} El algoritmo de división binaria calcula primero el bit de menor peso y por último el de mayor peso. Puesto que la notación posicional requiere escribirlos desde el más significativo al menos significativo, la pila actúa como un adaptador de ordenamiento inverso.
-\end{enumerate}
-
-\noindent\textbf{Conclusión:} En ningún momento estos problemas requirieron acceder a elementos intermedios ni despachar al primero que llegó (lo cual requeriría una cola FIFO). Por ende, la pila es la estructura más eficiente, óptima ($O(1)$ en inserción y remoción) y formalmente adecuada para su resolución.
-
-\vspace{5mm}
-\hrule
-\newpage
-
-% ========================================================
-% CONCLUSIONES GENERALES
-% ========================================================
-\section*{Conclusiones Generales}
-\addcontentsline{toc}{section}{Conclusiones Generales}
-
-\begin{enumerate}
-    \item La estructura de datos \textbf{Pila (Stack)} provee una abstracción fundamental para resolver problemas de orden inverso, control de estados y análisis sintáctico formal mediante operaciones de complejidad temporal constante $O(1)$.
-    \item La biblioteca estándar de C++ (\texttt{std::stack}) simplifica notablemente la codificación al ofrecer una interfaz robusta (\texttt{push}, \texttt{pop}, \texttt{top}, \texttt{empty}) con gestión dinámica y segura de memoria.
-    \item El análisis de los algoritmos de verificación de paréntesis y conversión numérica evidencia el papel central que juegan las pilas en la construcción de compiladores, analizadores sintácticos y máquinas de cómputo basadas en pilas de ejecución (\textit{call stack}).
-\end{enumerate}
 
 \end{document}

@@ -22,8 +22,3 @@
 | 04 | **Historial Deshacer (Undo)** | [`ejercicio4.cpp`](codigo/ejercicio4.cpp) | [`ejercicio4.c`](codigo/ejercicio4.c) | [Captura](imagenes/captura_ejercicio4.png) | Menú interactivo de editor para apilar acciones, desapilar (revertir la última acción) y consultar el tope actual con `top()`. |
 | 05 | **Decimal a binario** | [`ejercicio5.cpp`](codigo/ejercicio5.cpp) | [`ejercicio5.c`](codigo/ejercicio5.c) | [Captura](imagenes/captura_ejercicio5.png) | Divisiones sucesivas entre 2 apilando residuos (de LSB a MSB). La pila invierte la salida entregando el binario correcto (ej. `13` $\rightarrow$ `1101`). |
 
----
-
-## 🧠 Pregunta de Cierre
-**¿Qué característica común tienen los cinco problemas que hace apropiado utilizar una pila?**  
-La característica común es la **reversibilidad temporal y la precedencia del último elemento ingresado (LIFO)**. En todos los problemas, el elemento más recientemente registrado o calculado es el que debe procesarse, verificarse o extraerse primero.

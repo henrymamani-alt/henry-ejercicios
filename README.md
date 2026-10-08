@@ -17,7 +17,7 @@ Este repositorio contiene los trabajos encargados del curso de **Estructura de D
 ```text
 henry-ejercicios/
 ├── 📁 Tarea_1_Estructuras_Basicas/   --> 15 ejercicios de Estructuras Básicas (C y C++)
-└── 📁 Tarea_2_Pilas/                --> 5 ejercicios de Pilas (Stack en C++ y C) + Pregunta de Cierre
+└── 📁 Tarea_2_Pilas/                --> 5 ejercicios de Pilas (Stack en C++ y C)
 ```
 
 ---
@@ -32,7 +32,7 @@ Resolución completa de los 15 ejercicios del Capítulo I sobre tipos de datos, 
 ---
 
 ### 2. [Tarea 2: Pilas / Stack (Capítulo II)](Tarea_2_Pilas/)
-Resolución completa de los 5 ejercicios del Capítulo II sobre estructuras lineales tipo Pila (**LIFO: Last In, First Out**) implementados tanto en **C++** (usando `std::stack`) como en **C** (usando `struct` y arreglos), incluyendo la justificación conceptual de cierre.
+Resolución completa de los 5 ejercicios del Capítulo II sobre estructuras lineales tipo Pila (**LIFO: Last In, First Out**) implementados tanto en **C++** (usando `std::stack`) como en **C** (usando `struct` y arreglos).
 - 📄 **Informe Oficial en PDF:** [`informe_pilas.pdf`](Tarea_2_Pilas/informe_pilas.pdf)
 - 📝 **Código Fuente LaTeX:** [`main.tex`](Tarea_2_Pilas/main.tex)
 - 📁 **Carpeta de Código:** [`Tarea_2_Pilas/codigo/`](Tarea_2_Pilas/codigo/)
