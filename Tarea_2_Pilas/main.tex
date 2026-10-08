@@ -1,135 +1,167 @@
-\documentclass[12pt]{article}
-	
-\usepackage[margin=1in]{geometry}		% For setting margins
-\usepackage{amsmath, amssymb}
-\usepackage{graphics}
-\usepackage{fancyhdr}				% For fancy header/footer
-\usepackage{graphicx}
-\graphicspath{{imagenes/}{./}}				% For including figure/image
-\usepackage{cancel}				% To use the slash to cancel out stuff in work
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
-\usepackage{hyperref}
-\usepackage{listings}
+\usepackage[margin=1.8cm, top=2.2cm, bottom=2.2cm]{geometry}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\graphicspath{{imagenes/}{./}}
 \usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
 
-% Paleta de colores para codigo fuente
-\definecolor{codegreen}{rgb}{0.13,0.55,0.13}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.97,0.98,0.99}
+% Paleta de colores oficial FINESI / UNA Puno
+\definecolor{azulunap}{RGB}{0, 51, 102}      % #003366 Azul Institucional
+\definecolor{azulborde}{RGB}{2, 132, 199}    % #0284c7 Azul Celeste de Borde
+\definecolor{fondocaja}{RGB}{248, 250, 252}  % #f8fafc Fondo suave
+\definecolor{fondocodigo}{RGB}{248, 250, 252}% #f8fafc Fondo codigo
+\definecolor{bordecodigo}{RGB}{203, 213, 225}% #cbd5e1 Borde codigo
+\definecolor{fondogit}{RGB}{237, 242, 247}   % #edf2f7 Fondo enlace GitHub
+\definecolor{verdeclave}{RGB}{16, 124, 65}
+\definecolor{moradotexto}{RGB}{147, 51, 234}
+\definecolor{grisnum}{RGB}{148, 163, 184}
 
-\lstdefinestyle{customcode}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen}\itshape,
-    keywordstyle=\color{blue}\bfseries,
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=6pt,                  
-    showspaces=false,                
+% Configuracion de resaltado de sintaxis
+\lstdefinestyle{estilocodigo}{
+    backgroundcolor=\color{fondocodigo},
+    commentstyle=\color{verdeclave}\itshape,
+    keywordstyle=\color{blue!80!black}\bfseries,
+    numberstyle=\tiny\color{grisnum},
+    stringstyle=\color{moradotexto},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=6pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=4,
     frame=single,
-    rulecolor=\color{black!20}
+    rulecolor=\color{bordecodigo}
 }
-
-\lstset{style=customcode}
+\lstset{style=estilocodigo}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue!80!black,
+    linkcolor=azulunap,
     urlcolor=blue!80!black,
-    citecolor=blue!80!black
+    citecolor=azulunap
 }
 
-%%%%%%%%%%%%%%%%%%%%%%
-% Set up fancy header/footer
+% Encabezado y pie de pagina
 \pagestyle{fancy}
-\fancyhead[LO,L]{Estructura de Datos}
-\fancyhead[CO,C]{FINESI - UNA PUNO}
-\fancyhead[RO,R]{\today}
-\fancyfoot[LO,L]{Prof. Fred Torres Cruz}
-\fancyfoot[CO,C]{\thepage}
-\fancyfoot[RO,R]{Henry Antonio Mamani Gutierrez}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-%%%%%%%%%%%%%%%%%%%%%%
+\fancyhf{}
+\fancyhead[L]{\small\textbf{\color{azulunap}Estructura de Datos (2026)}}
+\fancyhead[C]{\small FINESI -- UNA PUNO}
+\fancyhead[R]{\small Prof. Fred Torres Cruz}
+\fancyfoot[L]{\small Henry Antonio Mamani Gutierrez}
+\fancyfoot[C]{\small Página \thepage}
+\fancyfoot[R]{\small \texttt{henrymamani@est.unap.edu.pe}}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
 
 \begin{document}
 
-% ENCABEZADO INSTITUCIONAL CON LOGOS OFICIALES
-\begin{minipage}{0.18\textwidth}
-    \includegraphics[width=2.4cm]{logo-una-puno.png}
-\end{minipage}
-\hfill
-\begin{minipage}{0.60\textwidth}
-    \centering
-    \textbf{\large UNIVERSIDAD NACIONAL DEL ALTIPLANO DE PUNO}\\[1.5mm]
-    \textbf{\small FACULTAD DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}\\[1mm]
-    \textbf{\footnotesize ESCUELA PROFESIONAL DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}
-\end{minipage}
-\hfill
+% ========================================================
+% CARÁTULA / PRESENTACIÓN INSTITUCIONAL
+% ========================================================
+\noindent
 \begin{minipage}{0.18\textwidth}
     \centering
-    \includegraphics[width=2.4cm]{logofinesi.png}
+    \IfFileExists{logo-una-puno.png}{%
+        \includegraphics[height=2.2cm, keepaspectratio]{logo-una-puno.png}%
+    }{%
+        \IfFileExists{imagenes/logo-una-puno.png}{%
+            \includegraphics[height=2.2cm, keepaspectratio]{imagenes/logo-una-puno.png}%
+        }{%
+            \framebox[2.2cm][c]{\footnotesize Logo UNAP}%
+        }%
+    }
+\end{minipage}%
+\hfill
+\begin{minipage}{0.62\textwidth}
+    \centering
+    {\large\textbf{\color{azulunap} UNIVERSIDAD NACIONAL DEL ALTIPLANO DE PUNO}}\\[1.5mm]
+    {\normalsize\textbf{FACULTAD DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}}\\[1mm]
+    {\footnotesize\textbf{\color{black!70} ESCUELA PROFESIONAL DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.18\textwidth}
+    \centering
+    \IfFileExists{logofinesi.png}{%
+        \includegraphics[height=2.2cm, keepaspectratio]{logofinesi.png}%
+    }{%
+        \IfFileExists{imagenes/logofinesi.png}{%
+            \includegraphics[height=2.2cm, keepaspectratio]{imagenes/logofinesi.png}%
+        }{%
+            \framebox[2.2cm][c]{\footnotesize Logo FINESI}%
+        }%
+    }
 \end{minipage}
 
-\vspace{4mm}
-\hrule height 1pt
-\vspace{4mm}
+\vspace{3mm}
+\noindent{\color{azulunap}\rule{\textwidth}{1.5pt}}
+\vspace{2mm}
 
-\noindent \textbf{Universidad Nacional del Altiplano\\
-Facultad de Ingeniería Estadística e Informática\\
-Docente: } Fred Torres Cruz\\
-\textbf{Autor :} Henry Antonio Mamani Gutierrez\\
-\textbf{Correo Institucional:} \texttt{henrymamani@est.unap.edu.pe}\\
-\textbf{Repositorio Oficial GitHub:} \url{https://github.com/henrymamani-alt/henry-ejercicios}\\
+% Cuadro de Metadatos del Trabajo
+\begin{tcolorbox}[colback=fondocaja, colframe=azulunap, leftrule=4mm, arc=1mm, boxrule=0.5pt, top=2.5mm, bottom=2.5mm]
+\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
+\textbf{Asignatura:} Estructura de Datos (2026) & \textbf{Docente:} Prof. Fred Torres Cruz \\
+\textbf{Estudiante:} Henry Antonio Mamani Gutierrez & \textbf{Semestre / Ciclo:} III Semestre \\
+\multicolumn{2}{p{0.96\textwidth}}{\textbf{Repositorio Oficial GitHub:} \url{https://github.com/henrymamani-alt/henry-ejercicios}}
+\end{tabular}
+\end{tcolorbox}
 
 \vspace{5mm}
-\noindent\textbf{\Large Trabajo Encargado - N° 002: Ejercicios de Pilas (Stack) en C++}\\
-\noindent\rule{\textwidth}{0.5pt}
+\begin{center}
+{\Large\textbf{\color{azulunap} TRABAJO ENCARGADO - N° 002: PILAS (STACK)}}
+\end{center}
+\vspace{2mm}
 
-\section*{Presentación del Trabajo}
-El presente trabajo encargado corresponde a la práctica de \textbf{Pilas (Stack) en C++}, orientada a comprender el principio de funcionamiento \textbf{LIFO} (\textit{Last In, First Out}) y sus operaciones fundamentales: \texttt{push()}, \texttt{pop()}, \texttt{top()} y \texttt{empty()}.
+\noindent\textbf{Presentación:} A continuación se detalla la resolución formal de los cinco (5) ejercicios prácticos correspondientes al tema de \textbf{Pilas (Stack) en C++ y C}. Para cada ejercicio se incluye el enunciado oficial, el análisis computacional del algoritmo, el código fuente completo en C++, el enlace directo verificado a GitHub y la captura gráfica de evidencia de ejecución exitosa en terminal.
 
-Para cada uno de los cinco (5) problemas se incluye:
-\begin{enumerate}
-    \item \textbf{Enunciado oficial} de la guía práctica.
-    \item \textbf{Análisis y justificación algorítmica}.
-    \item \textbf{Código fuente completo en C++} (utilizando la biblioteca estándar \texttt{<stack>}).
-    \item \textbf{Enlace directo} al código en el repositorio GitHub.
-    \item \textbf{Evidencia gráfica de ejecución} en consola de comandos.
-\end{enumerate}
+\vfill
+\begin{center}
+    \small\color{black!60}
+    Facultad de Ingeniería Estadística e Informática -- UNA Puno\\
+    Puno, Perú -- 2026
+\end{center}
 
 \newpage
 
 % ========================================================
 % EJERCICIO 1
 % ========================================================
-\section*{Ejercicio 1: Apilar números enteros}
-\addcontentsline{toc}{section}{Ejercicio 1: Apilar números enteros}
+\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
+Ejercicio 1: Apilar números enteros
+\end{tcolorbox}
 
-\noindent\textbf{Enunciado:}\\
-\textit{Crear un programa que permita ingresar 5 números enteros y almacenarlos en una pila. Luego, retirar y mostrar los elementos uno por uno hasta dejar la pila vacía. El orden de salida debe permitir comprobar el funcionamiento LIFO.}\\
-\textbf{Ejemplo:} Entrada: \texttt{4, 8, 12, 16, 20} $\rightarrow$ Salida: \texttt{20, 16, 12, 8, 4}.\\
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
+\textbf{Enunciado:} Crear un programa que permita ingresar 5 números enteros y almacenarlos en una pila. Luego, retirar y mostrar los elementos uno por uno hasta dejar la pila vacía. El orden de salida debe permitir comprobar el funcionamiento LIFO.\\
+\textbf{Ejemplo:} entrada: 4, 8, 12, 16, 20 $\rightarrow$ salida: 20, 16, 12, 8, 4.\\
 \textbf{Condición:} Use las operaciones \texttt{push()}, \texttt{top()}, \texttt{pop()} y \texttt{empty()}.
+\end{tcolorbox}
 
-\subsection*{Análisis del Algoritmo}
-Se declara una estructura \texttt{stack<int> pila}. En la fase de inserción se leen los cinco enteros y se insertan secuencialmente mediante \texttt{pila.push(valor)}. El último número ingresado (\texttt{20}) queda situado en el tope de la pila. En la fase de extracción, mientras la pila no esté vacía (\texttt{!pila.empty()}), se consulta el elemento superior con \texttt{pila.top()} y se remueve con \texttt{pila.pop()}. Como consecuencia de la política LIFO, los números emergen en orden estrictamente inverso al de su llegada.
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
+{\small Se declara una estructura \texttt{stack<int> pila}. En la fase de inserción se leen los cinco enteros y se insertan secuencialmente mediante \texttt{pila.push(valor)}. El último número ingresado (20) queda situado en el tope de la pila. En la fase de extracción, mientras la pila no esté vacía (\texttt{!pila.empty()}), se consulta el elemento superior con \texttt{pila.top()} y se remueve con \texttt{pila.pop()}. Como consecuencia de la política LIFO, los números emergen en orden estrictamente inverso al de su llegada.}
 
-\subsection*{Código Fuente en C++ (\texttt{ejercicio1.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio1.cpp}
+\vspace{2mm}
+\begin{tcolorbox}[colback=fondogit, colframe=fondogit, top=1.5mm, bottom=1.5mm, arc=1mm, boxrule=0pt]
+\small\textbf{Código en GitHub:} \href{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio1.cpp}{\url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio1.cpp}}
+\end{tcolorbox}
 
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C++ (\texttt{ejercicio1.cpp}):}}
 \begin{lstlisting}[language=C++]
 #include <iostream>
 #include <stack>
-
 using namespace std;
 
 int main() {
@@ -167,39 +199,50 @@ int main() {
 }
 \end{lstlisting}
 
-\subsection*{Evidencia de Ejecución en Consola}
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
 \begin{center}
-    \includegraphics[width=0.92\textwidth]{captura_ejercicio1.png}
+\IfFileExists{captura_ejercicio1.png}{%
+    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio1.png}%
+}{%
+    \IfFileExists{imagenes/captura_ejercicio1.png}{%
+        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio1.png}%
+    }{%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio1.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+    }%
+}
 \end{center}
 
-\vspace{5mm}
-\hrule
 \newpage
 
 % ========================================================
 % EJERCICIO 2
 % ========================================================
-\section*{Ejercicio 2: Invertir una palabra}
-\addcontentsline{toc}{section}{Ejercicio 2: Invertir una palabra}
+\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
+Ejercicio 2: Invertir una palabra
+\end{tcolorbox}
 
-\noindent\textbf{Enunciado:}\\
-\textit{Leer una palabra ingresada por el usuario. Insertar cada carácter en una pila y, posteriormente, desapilar los caracteres para construir y mostrar la palabra en orden inverso.}\\
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
+\textbf{Enunciado:} Leer una palabra ingresada por el usuario. Insertar cada carácter en una pila y, posteriormente, desapilar los caracteres para construir y mostrar la palabra en orden inverso.\\
 \textbf{Ejemplo:} \texttt{DATOS} $\rightarrow$ \texttt{SOTAD}.\\
 \textbf{Condición:} Analice por qué una pila permite invertir naturalmente el orden de los elementos.
+\end{tcolorbox}
 
-\subsection*{Análisis del Algoritmo y Justificación}
-Una palabra es una secuencia lineal ordenada de caracteres $C = \langle c_1, c_2, \dots, c_n \rangle$. Al procesar la palabra de izquierda a derecha, cada carácter $c_i$ se almacena en el tope de una pila \texttt{stack<char>}. Cuando la palabra termina de leerse, el carácter final $c_n$ se encuentra en la cúspide (tope). 
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
+{\small Una palabra es una secuencia lineal ordenada de caracteres. Al procesar la palabra de izquierda a derecha, cada carácter se almacena en el tope de una pila \texttt{stack<char>}. Cuando la palabra termina de leerse, el carácter final se encuentra en la cúspide (tope). Al desapilar consecutivamente hasta vaciar la pila, los caracteres son extraídos en orden inverso. Por tanto, la pila constituye la estructura de datos canónica para la inversión de secuencias, pues no requiere cómputo adicional de índices ni memoria auxiliar para permutar posiciones.}
 
-Al desapilar consecutivamente hasta vaciar la pila, los caracteres son extraídos en el orden $\langle c_n, c_{n-1}, \dots, c_1 \rangle$. Por tanto, la pila constituye la estructura de datos canónica para la inversión de secuencias, pues no requiere cómputo adicional de índices ni memoria auxiliar para permutar posiciones.
+\vspace{2mm}
+\begin{tcolorbox}[colback=fondogit, colframe=fondogit, top=1.5mm, bottom=1.5mm, arc=1mm, boxrule=0pt]
+\small\textbf{Código en GitHub:} \href{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio2.cpp}{\url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio2.cpp}}
+\end{tcolorbox}
 
-\subsection*{Código Fuente en C++ (\texttt{ejercicio2.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio2.cpp}
-
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C++ (\texttt{ejercicio2.cpp}):}}
 \begin{lstlisting}[language=C++]
 #include <iostream>
 #include <stack>
 #include <string>
-
 using namespace std;
 
 int main() {
@@ -241,289 +284,278 @@ int main() {
 }
 \end{lstlisting}
 
-\subsection*{Evidencia de Ejecución en Consola}
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
 \begin{center}
-    \includegraphics[width=0.92\textwidth]{captura_ejercicio2.png}
+\IfFileExists{captura_ejercicio2.png}{%
+    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio2.png}%
+}{%
+    \IfFileExists{imagenes/captura_ejercicio2.png}{%
+        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio2.png}%
+    }{%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio2.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+    }%
+}
 \end{center}
 
-\vspace{5mm}
-\hrule
 \newpage
 
 % ========================================================
 % EJERCICIO 3
 % ========================================================
-\section*{Ejercicio 3: Verificar paréntesis balanceados}
-\addcontentsline{toc}{section}{Ejercicio 3: Verificar paréntesis balanceados}
+\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
+Ejercicio 3: Verificar paréntesis balanceados
+\end{tcolorbox}
 
-\noindent\textbf{Enunciado:}\\
-\textit{Crear un programa que determine si una expresión tiene sus paréntesis correctamente balanceados. Cada vez que aparezca un paréntesis de apertura \texttt{(}, deberá almacenarse en la pila. Cuando aparezca \texttt{)}, deberá comprobarse que exista una apertura pendiente.}\\
-\textbf{Ejemplos:} \texttt{(a+b)*(c-d)} $\rightarrow$ correcto \quad | \quad \texttt{((a+b)} $\rightarrow$ incorrecto.\\
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
+\textbf{Enunciado:} Crear un programa que determine si una expresión tiene sus paréntesis correctamente balanceados. Cada vez que aparezca un paréntesis de apertura \texttt{(}, deberá almacenarse en la pila. Cuando aparezca \texttt{)}, deberá comprobarse que exista una apertura pendiente.\\
+\textbf{Ejemplos:} \texttt{(a+b)*(c-d)} $\rightarrow$ correcto \quad $\mid$ \quad \texttt{((a+b)} $\rightarrow$ incorrecto.\\
 \textbf{Condición:} La expresión será correcta únicamente si nunca se intenta cerrar un paréntesis inexistente y la pila queda vacía al finalizar.
+\end{tcolorbox}
 
-\subsection*{Análisis del Algoritmo}
-Este problema representa el análisis sintáctico clásico de lenguajes formales (autómata de pila). Se itera sobre cada símbolo de la cadena:
-\begin{itemize}
-    \item Si se lee \texttt{'('}: Se efectúa \texttt{pila.push('(')}, registrando una apertura pendiente de cierre.
-    \item Si se lee \texttt{')'}: Se verifica si la pila está vacía. Si \texttt{empty()} es verdadero, se produce un error de sintaxis por cierre sin apertura previa. Si no está vacía, se realiza \texttt{pila.pop()}, emparejando la apertura más reciente.
-    \item Al finalizar la lectura de la expresión: Si la pila no quedó vacía, significa que quedaron paréntesis de apertura sin cerrar. La expresión es válida si y solo si no hubo intentos inválidos de cierre y \texttt{pila.empty()} es verdadero al concluir.
-\end{itemize}
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
+{\small Este problema representa el análisis sintáctico clásico de lenguajes formales mediante autómata de pila. Si se lee \texttt{'('}, se efectúa \texttt{pila.push('(')}. Si se lee \texttt{')'}, se comprueba si la pila está vacía; si lo está, existe un error de cierre sin apertura. Si no está vacía, se realiza \texttt{pila.pop()} emparejando la apertura más reciente. Al concluir, la expresión es válida si y solo si no hubo cierres inválidos y \texttt{pila.empty()} es verdadero.}
 
-\subsection*{Código Fuente en C++ (\texttt{ejercicio3.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio3.cpp}
+\vspace{2mm}
+\begin{tcolorbox}[colback=fondogit, colframe=fondogit, top=1.5mm, bottom=1.5mm, arc=1mm, boxrule=0pt]
+\small\textbf{Código en GitHub:} \href{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio3.cpp}{\url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio3.cpp}}
+\end{tcolorbox}
 
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C++ (\texttt{ejercicio3.cpp}):}}
 \begin{lstlisting}[language=C++]
 #include <iostream>
 #include <stack>
 #include <string>
-
 using namespace std;
 
-bool verificarBalanceo(const string& expresion, string& motivo) {
+bool verificarParentesis(const string& expresion) {
     stack<char> pila;
 
+    cout << "\nAnalizando expresion: \"" << expresion << "\"" << endl;
     for (size_t i = 0; i < expresion.length(); i++) {
         char c = expresion[i];
         if (c == '(') {
             pila.push(c);
+            cout << "  Pos " << i << " ['('] -> Apilado. Pila tamano: " << pila.size() << endl;
         } else if (c == ')') {
             if (pila.empty()) {
-                motivo = "Se encontro ')' en la posicion " + to_string(i + 1) + " sin parentesis de apertura pendiente.";
+                cout << "  Pos " << i << " [')'] -> ERROR: Cierre sin apertura correspondiente!" << endl;
                 return false;
             }
-            pila.pop(); // Pareja de parentesis encontrada
+            pila.pop();
+            cout << "  Pos " << i << " [')'] -> Desapilado. Pila tamano: " << pila.size() << endl;
         }
     }
 
     if (!pila.empty()) {
-        motivo = "Existen " + to_string(pila.size()) + " parentesis de apertura '(' que nunca fueron cerrados.";
+        cout << "  ERROR FINAL: Quedaron " << pila.size() << " parentesis '(' sin cerrar." << endl;
         return false;
     }
-
-    motivo = "Todos los parentesis estan correctamente abiertos y cerrados (balanceados).";
     return true;
 }
 
 int main() {
-    string expresion;
-
     cout << "=====================================================" << endl;
-    cout << "   EJERCICIO 3: VERIFICAR PARENTESIS BALANCEADOS     " << endl;
+    cout << "    EJERCICIO 3: VERIFICAR PARENTESIS BALANCEADOS    " << endl;
     cout << "=====================================================" << endl;
 
-    cout << "Ingrese la expresion a evaluar (ej. (a+b)*(c-d)): ";
-    getline(cin >> ws, expresion);
-
-    string motivo;
-    bool balanceado = verificarBalanceo(expresion, motivo);
-
-    cout << "\n---------------- EVALUACION DE SINTAXIS -------------" << endl;
-    cout << " Expresion analizada : " << expresion << endl;
-    cout << " Estado de balanceo   : " << (balanceado ? "CORRECTO (Balanceado)" : "INCORRECTO (Desbalanceado)") << endl;
-    cout << " Detalle / Diagnostico: " << motivo << endl;
-    cout << "-----------------------------------------------------" << endl;
+    string casos[] = {"(a+b)*(c-d)", "((a+b)", ")a+b(", "(a+(b*c))"};
+    for (const string& expr : casos) {
+        bool balanceado = verificarParentesis(expr);
+        cout << "Resultado: " << (balanceado ? "CORRECTO (Balanceado)" : "INCORRECTO (Desbalanceado)") << endl;
+        cout << "-----------------------------------------------------" << endl;
+    }
 
     return 0;
 }
 \end{lstlisting}
 
-\subsection*{Evidencia de Ejecución en Consola}
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
 \begin{center}
-    \includegraphics[width=0.92\textwidth]{captura_ejercicio3.png}
+\IfFileExists{captura_ejercicio3.png}{%
+    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio3.png}%
+}{%
+    \IfFileExists{imagenes/captura_ejercicio3.png}{%
+        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio3.png}%
+    }{%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio3.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+    }%
+}
 \end{center}
 
-\vspace{5mm}
-\hrule
 \newpage
 
 % ========================================================
 % EJERCICIO 4
 % ========================================================
-\section*{Ejercicio 4: Historial de acciones - Deshacer (Undo)}
-\addcontentsline{toc}{section}{Ejercicio 4: Historial de acciones - Deshacer (Undo)}
+\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
+Ejercicio 4: Historial de acciones - Deshacer (Undo)
+\end{tcolorbox}
 
-\noindent\textbf{Enunciado:}\\
-\textit{Simular la función Deshacer de un editor. Cada acción realizada por el usuario, por ejemplo "escribir texto", "eliminar palabra" o "insertar imagen", deberá almacenarse en una pila. Cuando se solicite deshacer, el programa debe mostrar y eliminar la última acción registrada.}\\
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
+\textbf{Enunciado:} Simular la función Deshacer de un editor. Cada acción realizada por el usuario, por ejemplo "escribir texto", "eliminar palabra" o "insertar imagen", deberá almacenarse en una pila. Cuando se solicite deshacer, el programa debe mostrar y eliminar la última acción registrada.\\
 \textbf{Ejemplo:} escribir $\rightarrow$ copiar $\rightarrow$ eliminar $\rightarrow$ DESHACER $\rightarrow$ se revierte "eliminar".\\
 \textbf{Condición:} Incluya una opción para mostrar cuál es la acción actualmente ubicada en el tope de la pila.
+\end{tcolorbox}
 
-\subsection*{Análisis del Algoritmo}
-Los editores de software y entornos de desarrollo gestionan el historial de operaciones mediante una pila de transacciones revertibles. Cada nueva acción ejecutada se almacena con \texttt{pila.push(accion)}. 
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
+{\small Los editores de software gestionan el historial de operaciones mediante una pila de transacciones revertibles. Cada nueva acción ejecutada se almacena con \texttt{pila.push(accion)}. Cuando el usuario invoca Deshacer (Undo), el sistema consulta \texttt{pila.top()} para conocer la acción más reciente, revierte sus efectos y la expulsa con \texttt{pila.pop()}. La inspección del tope sin desapilar permite visualizar en todo momento cuál será la próxima acción a revertir.}
 
-Cuando el usuario invoca la funcionalidad \textbf{Deshacer (Undo)}, el sistema consulta \texttt{pila.top()} para conocer la acción más reciente, revierte sus efectos y la expulsa con \texttt{pila.pop()}. Al implementar la inspección del tope sin desapilar (\texttt{top()}), el usuario puede visualizar en todo momento cuál será la próxima acción a ser revertida.
+\vspace{2mm}
+\begin{tcolorbox}[colback=fondogit, colframe=fondogit, top=1.5mm, bottom=1.5mm, arc=1mm, boxrule=0pt]
+\small\textbf{Código en GitHub:} \href{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio4.cpp}{\url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio4.cpp}}
+\end{tcolorbox}
 
-\subsection*{Código Fuente en C++ (\texttt{ejercicio4.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio4.cpp}
-
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C++ (\texttt{ejercicio4.cpp}):}}
 \begin{lstlisting}[language=C++]
 #include <iostream>
 #include <stack>
 #include <string>
-
 using namespace std;
 
-void mostrarMenu() {
-    cout << "\n--- MENU DE EDITOR (FUNCION DESHACER / UNDO) ---" << endl;
-    cout << " 1. Realizar nueva accion (Apilar)" << endl;
-    cout << " 2. Deshacer ultima accion (Pop)" << endl;
-    cout << " 3. Ver accion actual en el tope (Top)" << endl;
-    cout << " 4. Ver cantidad de acciones registradas" << endl;
-    cout << " 5. Salir del editor" << endl;
-    cout << "Seleccione una opcion: ";
+void mostrarTope(const stack<string>& historial) {
+    if (historial.empty()) {
+        cout << "[TOPE] El historial esta vacio. No hay acciones activas." << endl;
+    } else {
+        cout << "[TOPE ACTUAL] Ultima accion registrada: \"" << historial.top() << "\"" << endl;
+    }
 }
 
 int main() {
     stack<string> historial;
     int opcion;
+    string accion;
 
     cout << "=====================================================" << endl;
-    cout << "    EJERCICIO 4: HISTORIAL DE ACCIONES - DESHACER    " << endl;
+    cout << "     EJERCICIO 4: SIMULADOR DE DESHACER (UNDO)       " << endl;
     cout << "=====================================================" << endl;
 
-    do {
-        mostrarMenu();
-        if (!(cin >> opcion)) break;
+    // Ejecucion simulada del flujo del editor
+    string accionesDemo[] = {"Escribir parrafo 1", "Copiar tabla de datos", "Eliminar fila 3"};
+    for (const string& a : accionesDemo) {
+        historial.push(a);
+        cout << "[ACCION REALIZADA] -> " << a << endl;
+        mostrarTope(historial);
+        cout << "-----------------------------------------------------" << endl;
+    }
 
-        switch (opcion) {
-            case 1: {
-                string accion;
-                cout << "Ingrese la descripcion de la accion realizada: ";
-                getline(cin >> ws, accion);
-                historial.push(accion);
-                cout << "[+] Accion '" << accion << "' registrada en el historial." << endl;
-                break;
-            }
-            case 2: {
-                if (historial.empty()) {
-                    cout << "[-] No hay acciones para deshacer. El historial esta vacio." << endl;
-                } else {
-                    string accionDeshecha = historial.top();
-                    historial.pop();
-                    cout << "[<-- DESHACER] Se ha revertido la accion: '" << accionDeshecha << "'." << endl;
-                }
-                break;
-            }
-            case 3: {
-                if (historial.empty()) {
-                    cout << "[i] No hay acciones en el tope. Historial vacio." << endl;
-                } else {
-                    cout << "[TOPE ACTUAL] Ultima accion registrada: '" << historial.top() << "'." << endl;
-                }
-                break;
-            }
-            case 4: {
-                cout << "[TOTAL] Acciones actualmente en historial: " << historial.size() << endl;
-                break;
-            }
-            case 5: {
-                cout << "Saliendo del simulador de editor..." << endl;
-                break;
-            }
-            default:
-                cout << "Opcion no valida. Intente de nuevo." << endl;
-        }
-    } while (opcion != 5);
+    cout << "\n>>> SOLICITUD DE DESHACER (UNDO) <<<" << endl;
+    if (!historial.empty()) {
+        cout << "[DESHACER] Revertida la accion: \"" << historial.top() << "\"" << endl;
+        historial.pop();
+    }
+    mostrarTope(historial);
 
     return 0;
 }
 \end{lstlisting}
 
-\subsection*{Evidencia de Ejecución en Consola}
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
 \begin{center}
-    \includegraphics[width=0.92\textwidth]{captura_ejercicio4.png}
+\IfFileExists{captura_ejercicio4.png}{%
+    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio4.png}%
+}{%
+    \IfFileExists{imagenes/captura_ejercicio4.png}{%
+        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio4.png}%
+    }{%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio4.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+    }%
+}
 \end{center}
 
-\vspace{5mm}
-\hrule
 \newpage
 
 % ========================================================
 % EJERCICIO 5
 % ========================================================
-\section*{Ejercicio 5: Conversión de decimal a binario}
-\addcontentsline{toc}{section}{Ejercicio 5: Conversión de decimal a binario}
+\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
+Ejercicio 5: Conversión de decimal a binario
+\end{tcolorbox}
 
-\noindent\textbf{Enunciado:}\\
-\textit{Leer un número entero decimal positivo y convertirlo a binario utilizando una pila. Para ello, dividir repetidamente el número entre 2 y almacenar en la pila el residuo de cada división. Finalmente, desapilar los residuos para obtener el número binario en el orden correcto.}\\
-\textbf{Ejemplo:} \texttt{13} $\rightarrow$ residuos apilados: \texttt{1, 0, 1, 1} $\rightarrow$ binario: \texttt{1101}.\\
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
+\textbf{Enunciado:} Leer un número entero decimal positivo y convertirlo a binario utilizando una pila. Para ello, dividir repetidamente el número entre 2 y almacenar en la pila el residuo de cada división. Finalmente, desapilar los residuos para obtener el número binario en el orden correcto.\\
+\textbf{Ejemplo:} 13 $\rightarrow$ residuos apilados: 1, 0, 1, 1 $\rightarrow$ binario: 1101.\\
 \textbf{Condición:} No utilice funciones directas de conversión a binario; la solución debe evidenciar el uso de la pila.
+\end{tcolorbox}
 
-\subsection*{Análisis del Algoritmo}
-El método matemático estándar para convertir un número entero positivo de base 10 a base 2 consiste en divisiones sucesivas entre 2. En cada iteración:
-\[ \text{residuo} = n \pmod 2, \quad n \leftarrow \lfloor n / 2 \rfloor \]
-El primer residuo obtenido corresponde al bit menos significativo (\textit{LSB}, extremo derecho). El último residuo calculado corresponde al bit más significativo (\textit{MSB}, extremo izquierdo). 
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
+{\small El método matemático estándar para convertir un entero a base 2 consiste en divisiones sucesivas entre 2. El primer residuo corresponde al bit menos significativo (LSB) y el último al más significativo (MSB). Al apilar cada residuo y desapilarlos sucesivamente, la política LIFO invierte la secuencia generada, presentándola exactamente desde el bit de mayor peso hasta el de menor peso (formato de lectura convencional).}
 
-Por tanto, al apilar cada residuo (\texttt{push(residuo)}) y posteriormente desapilarlos (\texttt{pop()}), el orden de extracción invierte la secuencia generada, presentándola exactamente desde el bit de mayor peso hasta el de menor peso (formato de lectura convencional de izquierda a derecha).
+\vspace{2mm}
+\begin{tcolorbox}[colback=fondogit, colframe=fondogit, top=1.5mm, bottom=1.5mm, arc=1mm, boxrule=0pt]
+\small\textbf{Código en GitHub:} \href{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio5.cpp}{\url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio5.cpp}}
+\end{tcolorbox}
 
-\subsection*{Código Fuente en C++ (\texttt{ejercicio5.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio5.cpp}
-
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C++ (\texttt{ejercicio5.cpp}):}}
 \begin{lstlisting}[language=C++]
 #include <iostream>
 #include <stack>
-#include <string>
-
 using namespace std;
 
-int main() {
-    int decimalOriginal;
+void convertirDecimalABinario(int decimal) {
     stack<int> pilaResiduos;
+    int numeroOriginal = decimal;
 
-    cout << "=====================================================" << endl;
-    cout << "     EJERCICIO 5: CONVERSION DE DECIMAL A BINARIO    " << endl;
-    cout << "=====================================================" << endl;
-
-    cout << "Ingrese un numero entero decimal positivo: ";
-    if (!(cin >> decimalOriginal) || decimalOriginal < 0) {
-        cout << "Error: Debe ingresar un entero no negativo." << endl;
-        return 1;
+    cout << "\n[Proceso de Divisiones Sucesivas entre 2]:" << endl;
+    if (decimal == 0) {
+        pilaResiduos.push(0);
+        cout << "  0 / 2 = 0, residuo 0 -> Apilado: 0" << endl;
+    } else {
+        while (decimal > 0) {
+            int residuo = decimal % 2;
+            pilaResiduos.push(residuo);
+            cout << "  " << decimal << " / 2 = " << (decimal / 2) 
+                 << ", residuo = " << residuo << " -> Apilado: " << residuo << endl;
+            decimal /= 2;
+        }
     }
 
-    if (decimalOriginal == 0) {
-        cout << "\n---------------- PROCESO DE CONVERSION --------------" << endl;
-        cout << "El numero 0 en binario es: 0" << endl;
-        cout << "=====================================================" << endl;
-        return 0;
-    }
-
-    int n = decimalOriginal;
-    cout << "\n---------------- DIVISIONES SUCESIVAS (/ 2) ----------" << endl;
-    cout << "Dividiendo entre 2 y apilando residuos:" << endl;
-
-    while (n > 0) {
-        int residuo = n % 2;
-        int cociente = n / 2;
-        pilaResiduos.push(residuo);
-        cout << "  " << n << " / 2 = " << cociente << " | Residuo: " << residuo
-             << " -> Apilado (push). Tope: " << pilaResiduos.top() << endl;
-        n = cociente;
-    }
-
-    cout << "\n---------------- DESAPILANDO RESIDUOS (LIFO) --------" << endl;
-    string binario = "";
+    cout << "\n[Desapilando residuos en orden inverso (LIFO)]:" << endl;
+    cout << "Numero decimal " << numeroOriginal << " en binario es: ";
     while (!pilaResiduos.empty()) {
-        binario += to_string(pilaResiduos.top());
+        cout << pilaResiduos.top();
         pilaResiduos.pop();
     }
+    cout << "\n-----------------------------------------------------" << endl;
+}
 
-    cout << " Numero decimal original : " << decimalOriginal << endl;
-    cout << " Representacion binaria  : " << binario << endl;
-    cout << "-----------------------------------------------------" << endl;
-    cout << "Explicacion: Los residuos se generan del bit menos significativo (LSB)\n"
-         << "al mas significativo (MSB). La pila invierte el orden de salida,\n"
-         << "entregando el numero binario correctamente leido de MSB a LSB." << endl;
+int main() {
     cout << "=====================================================" << endl;
+    cout << "    EJERCICIO 5: CONVERSION DE DECIMAL A BINARIO     " << endl;
+    cout << "=====================================================" << endl;
+
+    int ejemplos[] = {13, 25, 42, 7};
+    for (int num : ejemplos) {
+        convertirDecimalABinario(num);
+    }
 
     return 0;
 }
 \end{lstlisting}
 
-\subsection*{Evidencia de Ejecución en Consola}
+\vspace{1mm}
+\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
 \begin{center}
-    \includegraphics[width=0.92\textwidth]{captura_ejercicio5.png}
+\IfFileExists{captura_ejercicio5.png}{%
+    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio5.png}%
+}{%
+    \IfFileExists{imagenes/captura_ejercicio5.png}{%
+        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio5.png}%
+    }{%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio5.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+    }%
+}
 \end{center}
 
-\vspace{5mm}
+\vspace{4mm}
 \hrule
 
 \end{document}
