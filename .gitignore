@@ -1,0 +1,9 @@
+*.exe
+*.o
+*.obj
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+__pycache__/

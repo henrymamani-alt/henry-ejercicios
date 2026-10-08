@@ -1,0 +1,569 @@
+\documentclass[12pt]{article}
+	
+\usepackage[margin=1in]{geometry}		% For setting margins
+\usepackage{amsmath, amssymb}
+\usepackage{graphics}
+\usepackage{fancyhdr}				% For fancy header/footer
+\usepackage{graphicx}				% For including figure/image
+\usepackage{cancel}				% To use the slash to cancel out stuff in work
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Paleta de colores para codigo fuente
+\definecolor{codegreen}{rgb}{0.13,0.55,0.13}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.98,0.99}
+
+\lstdefinestyle{customcode}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}\itshape,
+    keywordstyle=\color{blue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=6pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    frame=single,
+    rulecolor=\color{black!20}
+}
+
+\lstset{style=customcode}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!80!black,
+    urlcolor=blue!80!black,
+    citecolor=blue!80!black
+}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Set up fancy header/footer
+\pagestyle{fancy}
+\fancyhead[LO,L]{Estructura de Datos}
+\fancyhead[CO,C]{FINESI - UNA PUNO}
+\fancyhead[RO,R]{\today}
+\fancyfoot[LO,L]{Prof. Fred Torres Cruz}
+\fancyfoot[CO,C]{\thepage}
+\fancyfoot[RO,R]{Henry Antonio Mamani Gutierrez}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% ENCABEZADO INSTITUCIONAL CON LOGOS OFICIALES
+\begin{minipage}{0.18\textwidth}
+    \includegraphics[width=2.4cm]{logo-una-puno.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.60\textwidth}
+    \centering
+    \textbf{\large UNIVERSIDAD NACIONAL DEL ALTIPLANO DE PUNO}\\[1.5mm]
+    \textbf{\small FACULTAD DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}\\[1mm]
+    \textbf{\footnotesize ESCUELA PROFESIONAL DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}
+\end{minipage}
+\hfill
+\begin{minipage}{0.18\textwidth}
+    \centering
+    \includegraphics[width=2.4cm]{logofinesi.png}
+\end{minipage}
+
+\vspace{4mm}
+\hrule height 1pt
+\vspace{4mm}
+
+\noindent \textbf{Universidad Nacional del Altiplano\\
+Facultad de Ingeniería Estadística e Informática\\
+Docente: } Fred Torres Cruz\\
+\textbf{Autor :} Henry Antonio Mamani Gutierrez\\
+\textbf{Correo Institucional:} \texttt{henrymamani@est.unap.edu.pe}\\
+\textbf{Repositorio Oficial GitHub:} \url{https://github.com/henrymamani-alt/henry-ejercicios}\\
+
+\vspace{5mm}
+\noindent\textbf{\Large Trabajo Encargado - N° 002: Ejercicios de Pilas (Stack) en C++}\\
+\noindent\rule{\textwidth}{0.5pt}
+
+\section*{Presentación del Trabajo}
+El presente trabajo encargado corresponde a la práctica de \textbf{Pilas (Stack) en C++}, orientada a comprender el principio de funcionamiento \textbf{LIFO} (\textit{Last In, First Out}) y sus operaciones fundamentales: \texttt{push()}, \texttt{pop()}, \texttt{top()} y \texttt{empty()}.
+
+Para cada uno de los cinco (5) problemas y la pregunta de cierre se incluye:
+\begin{enumerate}
+    \item \textbf{Enunciado oficial} de la guía práctica.
+    \item \textbf{Análisis y justificación algorítmica}.
+    \item \textbf{Código fuente completo en C++} (utilizando la biblioteca estándar \texttt{<stack>}).
+    \item \textbf{Enlace directo} al código en el repositorio GitHub.
+    \item \textbf{Evidencia gráfica de ejecución} en consola de comandos.
+\end{enumerate}
+
+\newpage
+
+% ========================================================
+% EJERCICIO 1
+% ========================================================
+\section*{Ejercicio 1: Apilar números enteros}
+\addcontentsline{toc}{section}{Ejercicio 1: Apilar números enteros}
+
+\noindent\textbf{Enunciado:}\\
+\textit{Crear un programa que permita ingresar 5 números enteros y almacenarlos en una pila. Luego, retirar y mostrar los elementos uno por uno hasta dejar la pila vacía. El orden de salida debe permitir comprobar el funcionamiento LIFO.}\\
+\textbf{Ejemplo:} Entrada: \texttt{4, 8, 12, 16, 20} $\rightarrow$ Salida: \texttt{20, 16, 12, 8, 4}.\\
+\textbf{Condición:} Use las operaciones \texttt{push()}, \texttt{top()}, \texttt{pop()} y \texttt{empty()}.
+
+\subsection*{Análisis del Algoritmo}
+Se declara una estructura \texttt{stack<int> pila}. En la fase de inserción se leen los cinco enteros y se insertan secuencialmente mediante \texttt{pila.push(valor)}. El último número ingresado (\texttt{20}) queda situado en el tope de la pila. En la fase de extracción, mientras la pila no esté vacía (\texttt{!pila.empty()}), se consulta el elemento superior con \texttt{pila.top()} y se remueve con \texttt{pila.pop()}. Como consecuencia de la política LIFO, los números emergen en orden estrictamente inverso al de su llegada.
+
+\subsection*{Código Fuente en C++ (\texttt{ejercicio1.cpp})}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio1.cpp}
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() {
+    stack<int> pila;
+    const int TOTAL = 5;
+
+    cout << "=====================================================" << endl;
+    cout << "      EJERCICIO 1: APILAR NUMEROS ENTEROS (LIFO)     " << endl;
+    cout << "=====================================================" << endl;
+    cout << "Ingrese " << TOTAL << " numeros enteros para apilar:" << endl;
+
+    for (int i = 1; i <= TOTAL; i++) {
+        int valor;
+        cout << "Elemento [" << i << "/" << TOTAL << "]: ";
+        cin >> valor;
+        pila.push(valor);
+        cout << "  -> Insertado en la pila (push). Tope actual: " << pila.top() << endl;
+    }
+
+    cout << "\n---------------- DESAPILANDO ELEMENTOS --------------" << endl;
+    cout << "Orden de salida para verificar el principio LIFO:" << endl;
+
+    int orden = 1;
+    while (!pila.empty()) {
+        cout << "Extraccion #" << orden << ": " << pila.top() << " (retirado con pop)" << endl;
+        pila.pop();
+        orden++;
+    }
+
+    cout << "-----------------------------------------------------" << endl;
+    cout << "Estado final de la pila: " << (pila.empty() ? "VACIA (empty() == true)" : "NO VACIA") << endl;
+    cout << "=====================================================" << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection*{Evidencia de Ejecución en Consola}
+\begin{center}
+    \includegraphics[width=0.92\textwidth]{captura_ejercicio1.png}
+\end{center}
+
+\vspace{5mm}
+\hrule
+\newpage
+
+% ========================================================
+% EJERCICIO 2
+% ========================================================
+\section*{Ejercicio 2: Invertir una palabra}
+\addcontentsline{toc}{section}{Ejercicio 2: Invertir una palabra}
+
+\noindent\textbf{Enunciado:}\\
+\textit{Leer una palabra ingresada por el usuario. Insertar cada carácter en una pila y, posteriormente, desapilar los caracteres para construir y mostrar la palabra en orden inverso.}\\
+\textbf{Ejemplo:} \texttt{DATOS} $\rightarrow$ \texttt{SOTAD}.\\
+\textbf{Condición:} Analice por qué una pila permite invertir naturalmente el orden de los elementos.
+
+\subsection*{Análisis del Algoritmo y Justificación}
+Una palabra es una secuencia lineal ordenada de caracteres $C = \langle c_1, c_2, \dots, c_n \rangle$. Al procesar la palabra de izquierda a derecha, cada carácter $c_i$ se almacena en el tope de una pila \texttt{stack<char>}. Cuando la palabra termina de leerse, el carácter final $c_n$ se encuentra en la cúspide (tope). 
+
+Al desapilar consecutivamente hasta vaciar la pila, los caracteres son extraídos en el orden $\langle c_n, c_{n-1}, \dots, c_1 \rangle$. Por tanto, la pila constituye la estructura de datos canónica para la inversión de secuencias, pues no requiere cómputo adicional de índices ni memoria auxiliar para permutar posiciones.
+
+\subsection*{Código Fuente en C++ (\texttt{ejercicio2.cpp})}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio2.cpp}
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+int main() {
+    stack<char> pilaCaracteres;
+    string palabra;
+    string palabraInvertida = "";
+
+    cout << "=====================================================" << endl;
+    cout << "        EJERCICIO 2: INVERTIR UNA PALABRA            " << endl;
+    cout << "=====================================================" << endl;
+
+    cout << "Ingrese una palabra: ";
+    cin >> palabra;
+
+    // 1. Apilar cada caracter (push)
+    cout << "\n[Paso 1] Apilando caracteres de '" << palabra << "':" << endl;
+    for (size_t i = 0; i < palabra.length(); i++) {
+        pilaCaracteres.push(palabra[i]);
+        cout << "  Caracter '" << palabra[i] << "' apilado -> Tope: '" << pilaCaracteres.top() << "'" << endl;
+    }
+
+    // 2. Desapilar caracteres (pop) para construir la palabra invertida
+    cout << "\n[Paso 2] Desapilando para invertir (LIFO):" << endl;
+    while (!pilaCaracteres.empty()) {
+        palabraInvertida += pilaCaracteres.top();
+        pilaCaracteres.pop();
+    }
+
+    cout << "\n---------------- RESULTADO FINAL --------------------" << endl;
+    cout << " Palabra original  : " << palabra << endl;
+    cout << " Palabra invertida : " << palabraInvertida << endl;
+    cout << "-----------------------------------------------------" << endl;
+    cout << "Justificacion: Al seguir la disciplina LIFO (Last In, First Out),\n"
+         << "el ultimo caracter ingresado es el primero en desapilarse,\n"
+         << "lo que produce la inversion natural de la secuencia." << endl;
+    cout << "=====================================================" << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection*{Evidencia de Ejecución en Consola}
+\begin{center}
+    \includegraphics[width=0.92\textwidth]{captura_ejercicio2.png}
+\end{center}
+
+\vspace{5mm}
+\hrule
+\newpage
+
+% ========================================================
+% EJERCICIO 3
+% ========================================================
+\section*{Ejercicio 3: Verificar paréntesis balanceados}
+\addcontentsline{toc}{section}{Ejercicio 3: Verificar paréntesis balanceados}
+
+\noindent\textbf{Enunciado:}\\
+\textit{Crear un programa que determine si una expresión tiene sus paréntesis correctamente balanceados. Cada vez que aparezca un paréntesis de apertura \texttt{(}, deberá almacenarse en la pila. Cuando aparezca \texttt{)}, deberá comprobarse que exista una apertura pendiente.}\\
+\textbf{Ejemplos:} \texttt{(a+b)*(c-d)} $\rightarrow$ correcto \quad | \quad \texttt{((a+b)} $\rightarrow$ incorrecto.\\
+\textbf{Condición:} La expresión será correcta únicamente si nunca se intenta cerrar un paréntesis inexistente y la pila queda vacía al finalizar.
+
+\subsection*{Análisis del Algoritmo}
+Este problema representa el análisis sintáctico clásico de lenguajes formales (autómata de pila). Se itera sobre cada símbolo de la cadena:
+\begin{itemize}
+    \item Si se lee \texttt{'('}: Se efectúa \texttt{pila.push('(')}, registrando una apertura pendiente de cierre.
+    \item Si se lee \texttt{')'}: Se verifica si la pila está vacía. Si \texttt{empty()} es verdadero, se produce un error de sintaxis por cierre sin apertura previa. Si no está vacía, se realiza \texttt{pila.pop()}, emparejando la apertura más reciente.
+    \item Al finalizar la lectura de la expresión: Si la pila no quedó vacía, significa que quedaron paréntesis de apertura sin cerrar. La expresión es válida si y solo si no hubo intentos inválidos de cierre y \texttt{pila.empty()} es verdadero al concluir.
+\end{itemize}
+
+\subsection*{Código Fuente en C++ (\texttt{ejercicio3.cpp})}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio3.cpp}
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+bool verificarBalanceo(const string& expresion, string& motivo) {
+    stack<char> pila;
+
+    for (size_t i = 0; i < expresion.length(); i++) {
+        char c = expresion[i];
+        if (c == '(') {
+            pila.push(c);
+        } else if (c == ')') {
+            if (pila.empty()) {
+                motivo = "Se encontro ')' en la posicion " + to_string(i + 1) + " sin parentesis de apertura pendiente.";
+                return false;
+            }
+            pila.pop(); // Pareja de parentesis encontrada
+        }
+    }
+
+    if (!pila.empty()) {
+        motivo = "Existen " + to_string(pila.size()) + " parentesis de apertura '(' que nunca fueron cerrados.";
+        return false;
+    }
+
+    motivo = "Todos los parentesis estan correctamente abiertos y cerrados (balanceados).";
+    return true;
+}
+
+int main() {
+    string expresion;
+
+    cout << "=====================================================" << endl;
+    cout << "   EJERCICIO 3: VERIFICAR PARENTESIS BALANCEADOS     " << endl;
+    cout << "=====================================================" << endl;
+
+    cout << "Ingrese la expresion a evaluar (ej. (a+b)*(c-d)): ";
+    getline(cin >> ws, expresion);
+
+    string motivo;
+    bool balanceado = verificarBalanceo(expresion, motivo);
+
+    cout << "\n---------------- EVALUACION DE SINTAXIS -------------" << endl;
+    cout << " Expresion analizada : " << expresion << endl;
+    cout << " Estado de balanceo   : " << (balanceado ? "CORRECTO (Balanceado)" : "INCORRECTO (Desbalanceado)") << endl;
+    cout << " Detalle / Diagnostico: " << motivo << endl;
+    cout << "-----------------------------------------------------" << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection*{Evidencia de Ejecución en Consola}
+\begin{center}
+    \includegraphics[width=0.92\textwidth]{captura_ejercicio3.png}
+\end{center}
+
+\vspace{5mm}
+\hrule
+\newpage
+
+% ========================================================
+% EJERCICIO 4
+% ========================================================
+\section*{Ejercicio 4: Historial de acciones - Deshacer (Undo)}
+\addcontentsline{toc}{section}{Ejercicio 4: Historial de acciones - Deshacer (Undo)}
+
+\noindent\textbf{Enunciado:}\\
+\textit{Simular la función Deshacer de un editor. Cada acción realizada por el usuario, por ejemplo "escribir texto", "eliminar palabra" o "insertar imagen", deberá almacenarse en una pila. Cuando se solicite deshacer, el programa debe mostrar y eliminar la última acción registrada.}\\
+\textbf{Ejemplo:} escribir $\rightarrow$ copiar $\rightarrow$ eliminar $\rightarrow$ DESHACER $\rightarrow$ se revierte "eliminar".\\
+\textbf{Condición:} Incluya una opción para mostrar cuál es la acción actualmente ubicada en el tope de la pila.
+
+\subsection*{Análisis del Algoritmo}
+Los editores de software y entornos de desarrollo gestionan el historial de operaciones mediante una pila de transacciones revertibles. Cada nueva acción ejecutada se almacena con \texttt{pila.push(accion)}. 
+
+Cuando el usuario invoca la funcionalidad \textbf{Deshacer (Undo)}, el sistema consulta \texttt{pila.top()} para conocer la acción más reciente, revierte sus efectos y la expulsa con \texttt{pila.pop()}. Al implementar la inspección del tope sin desapilar (\texttt{top()}), el usuario puede visualizar en todo momento cuál será la próxima acción a ser revertida.
+
+\subsection*{Código Fuente en C++ (\texttt{ejercicio4.cpp})}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio4.cpp}
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+void mostrarMenu() {
+    cout << "\n--- MENU DE EDITOR (FUNCION DESHACER / UNDO) ---" << endl;
+    cout << " 1. Realizar nueva accion (Apilar)" << endl;
+    cout << " 2. Deshacer ultima accion (Pop)" << endl;
+    cout << " 3. Ver accion actual en el tope (Top)" << endl;
+    cout << " 4. Ver cantidad de acciones registradas" << endl;
+    cout << " 5. Salir del editor" << endl;
+    cout << "Seleccione una opcion: ";
+}
+
+int main() {
+    stack<string> historial;
+    int opcion;
+
+    cout << "=====================================================" << endl;
+    cout << "    EJERCICIO 4: HISTORIAL DE ACCIONES - DESHACER    " << endl;
+    cout << "=====================================================" << endl;
+
+    do {
+        mostrarMenu();
+        if (!(cin >> opcion)) break;
+
+        switch (opcion) {
+            case 1: {
+                string accion;
+                cout << "Ingrese la descripcion de la accion realizada: ";
+                getline(cin >> ws, accion);
+                historial.push(accion);
+                cout << "[+] Accion '" << accion << "' registrada en el historial." << endl;
+                break;
+            }
+            case 2: {
+                if (historial.empty()) {
+                    cout << "[-] No hay acciones para deshacer. El historial esta vacio." << endl;
+                } else {
+                    string accionDeshecha = historial.top();
+                    historial.pop();
+                    cout << "[<-- DESHACER] Se ha revertido la accion: '" << accionDeshecha << "'." << endl;
+                }
+                break;
+            }
+            case 3: {
+                if (historial.empty()) {
+                    cout << "[i] No hay acciones en el tope. Historial vacio." << endl;
+                } else {
+                    cout << "[TOPE ACTUAL] Ultima accion registrada: '" << historial.top() << "'." << endl;
+                }
+                break;
+            }
+            case 4: {
+                cout << "[TOTAL] Acciones actualmente en historial: " << historial.size() << endl;
+                break;
+            }
+            case 5: {
+                cout << "Saliendo del simulador de editor..." << endl;
+                break;
+            }
+            default:
+                cout << "Opcion no valida. Intente de nuevo." << endl;
+        }
+    } while (opcion != 5);
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection*{Evidencia de Ejecución en Consola}
+\begin{center}
+    \includegraphics[width=0.92\textwidth]{captura_ejercicio4.png}
+\end{center}
+
+\vspace{5mm}
+\hrule
+\newpage
+
+% ========================================================
+% EJERCICIO 5
+% ========================================================
+\section*{Ejercicio 5: Conversión de decimal a binario}
+\addcontentsline{toc}{section}{Ejercicio 5: Conversión de decimal a binario}
+
+\noindent\textbf{Enunciado:}\\
+\textit{Leer un número entero decimal positivo y convertirlo a binario utilizando una pila. Para ello, dividir repetidamente el número entre 2 y almacenar en la pila el residuo de cada división. Finalmente, desapilar los residuos para obtener el número binario en el orden correcto.}\\
+\textbf{Ejemplo:} \texttt{13} $\rightarrow$ residuos apilados: \texttt{1, 0, 1, 1} $\rightarrow$ binario: \texttt{1101}.\\
+\textbf{Condición:} No utilice funciones directas de conversión a binario; la solución debe evidenciar el uso de la pila.
+
+\subsection*{Análisis del Algoritmo}
+El método matemático estándar para convertir un número entero positivo de base 10 a base 2 consiste en divisiones sucesivas entre 2. En cada iteración:
+\[ \text{residuo} = n \pmod 2, \quad n \leftarrow \lfloor n / 2 \rfloor \]
+El primer residuo obtenido corresponde al bit menos significativo (\textit{LSB}, extremo derecho). El último residuo calculado corresponde al bit más significativo (\textit{MSB}, extremo izquierdo). 
+
+Por tanto, al apilar cada residuo (\texttt{push(residuo)}) y posteriormente desapilarlos (\texttt{pop()}), el orden de extracción invierte la secuencia generada, presentándola exactamente desde el bit de mayor peso hasta el de menor peso (formato de lectura convencional de izquierda a derecha).
+
+\subsection*{Código Fuente en C++ (\texttt{ejercicio5.cpp})}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio5.cpp}
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int decimalOriginal;
+    stack<int> pilaResiduos;
+
+    cout << "=====================================================" << endl;
+    cout << "     EJERCICIO 5: CONVERSION DE DECIMAL A BINARIO    " << endl;
+    cout << "=====================================================" << endl;
+
+    cout << "Ingrese un numero entero decimal positivo: ";
+    if (!(cin >> decimalOriginal) || decimalOriginal < 0) {
+        cout << "Error: Debe ingresar un entero no negativo." << endl;
+        return 1;
+    }
+
+    if (decimalOriginal == 0) {
+        cout << "\n---------------- PROCESO DE CONVERSION --------------" << endl;
+        cout << "El numero 0 en binario es: 0" << endl;
+        cout << "=====================================================" << endl;
+        return 0;
+    }
+
+    int n = decimalOriginal;
+    cout << "\n---------------- DIVISIONES SUCESIVAS (/ 2) ----------" << endl;
+    cout << "Dividiendo entre 2 y apilando residuos:" << endl;
+
+    while (n > 0) {
+        int residuo = n % 2;
+        int cociente = n / 2;
+        pilaResiduos.push(residuo);
+        cout << "  " << n << " / 2 = " << cociente << " | Residuo: " << residuo
+             << " -> Apilado (push). Tope: " << pilaResiduos.top() << endl;
+        n = cociente;
+    }
+
+    cout << "\n---------------- DESAPILANDO RESIDUOS (LIFO) --------" << endl;
+    string binario = "";
+    while (!pilaResiduos.empty()) {
+        binario += to_string(pilaResiduos.top());
+        pilaResiduos.pop();
+    }
+
+    cout << " Numero decimal original : " << decimalOriginal << endl;
+    cout << " Representacion binaria  : " << binario << endl;
+    cout << "-----------------------------------------------------" << endl;
+    cout << "Explicacion: Los residuos se generan del bit menos significativo (LSB)\n"
+         << "al mas significativo (MSB). La pila invierte el orden de salida,\n"
+         << "entregando el numero binario correctamente leido de MSB a LSB." << endl;
+    cout << "=====================================================" << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection*{Evidencia de Ejecución en Consola}
+\begin{center}
+    \includegraphics[width=0.92\textwidth]{captura_ejercicio5.png}
+\end{center}
+
+\vspace{5mm}
+\hrule
+\newpage
+
+% ========================================================
+% PREGUNTA DE CIERRE
+% ========================================================
+\section*{Pregunta de Cierre: Análisis Común de los Cinco Problemas}
+\addcontentsline{toc}{section}{Pregunta de Cierre: Análisis Común de los Cinco Problemas}
+
+\noindent\textbf{Enunciado:}\\
+\textit{¿Qué característica común tienen los cinco problemas que hace apropiado utilizar una pila?}
+
+\subsection*{Fundamentación Teórica y Comparativa}
+La característica común a los cinco problemas es la \textbf{reversibilidad temporal y la precedencia del último elemento ingresado}, formalizada mediante el principio \textbf{LIFO} (\textit{Last In, First Out}):
+
+\begin{enumerate}
+    \item \textbf{Inversión de Secuencias (Ejercicios 1 y 2):} Tanto en el apilado de enteros como en la inversión de palabras, se requiere recuperar los datos en el orden cronológicamente inverso a como fueron leídos. La pila almacena el flujo secuencial y lo entrega en sentido contrario de manera automática y de costo constante $O(1)$ por operación.
+    
+    \item \textbf{Estructuras Anidadas y Simetría (Ejercicio 3):} En el balanceo de paréntesis, el elemento que se debe cerrar y comprobar es siempre el \textit{último} paréntesis de apertura que se abrió. Este comportamiento en capas (anidamiento) concuerda de forma exacta con la mecánica del tope de una pila.
+    
+    \item \textbf{Deshacer Estados Recientes (Ejercicio 4):} En un sistema de edición o transacción, la acción que debe anularse ante una solicitud de \textit{Undo} es forzosamente la más reciente en el tiempo. La pila modela de forma natural la línea temporal de comandos.
+    
+    \item \textbf{Generación Inversa de Resultados (Ejercicio 5):} El algoritmo de división binaria calcula primero el bit de menor peso y por último el de mayor peso. Puesto que la notación posicional requiere escribirlos desde el más significativo al menos significativo, la pila actúa como un adaptador de ordenamiento inverso.
+\end{enumerate}
+
+\noindent\textbf{Conclusión:} En ningún momento estos problemas requirieron acceder a elementos intermedios ni despachar al primero que llegó (lo cual requeriría una cola FIFO). Por ende, la pila es la estructura más eficiente, óptima ($O(1)$ en inserción y remoción) y formalmente adecuada para su resolución.
+
+\vspace{5mm}
+\hrule
+\newpage
+
+% ========================================================
+% CONCLUSIONES GENERALES
+% ========================================================
+\section*{Conclusiones Generales}
+\addcontentsline{toc}{section}{Conclusiones Generales}
+
+\begin{enumerate}
+    \item La estructura de datos \textbf{Pila (Stack)} provee una abstracción fundamental para resolver problemas de orden inverso, control de estados y análisis sintáctico formal mediante operaciones de complejidad temporal constante $O(1)$.
+    \item La biblioteca estándar de C++ (\texttt{std::stack}) simplifica notablemente la codificación al ofrecer una interfaz robusta (\texttt{push}, \texttt{pop}, \texttt{top}, \texttt{empty}) con gestión dinámica y segura de memoria.
+    \item El análisis de los algoritmos de verificación de paréntesis y conversión numérica evidencia el papel central que juegan las pilas en la construcción de compiladores, analizadores sintácticos y máquinas de cómputo basadas en pilas de ejecución (\textit{call stack}).
+\end{enumerate}
+
+\end{document}

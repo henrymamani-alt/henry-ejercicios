@@ -1,49 +1,42 @@
-# Estructura de Datos - Capítulo I: Estructuras Básicas
+# Repositorio de Estructura de Datos (2026)
 
 **Universidad Nacional del Altiplano de Puno**  
 **Facultad de Ingeniería Estadística e Informática**  
 **Escuela Profesional de Ingeniería Estadística e Informática**  
 
-- **Curso:** Estructura de Datos (2026)  
-- **Docente:** Fred Torres-Cruz  
 - **Estudiante:** Henry Antonio Mamani Gutierrez  
+- **Docente:** Prof. Fred Torres Cruz  
+- **Asignatura:** Estructura de Datos  
 
 ---
 
-## Contenido del Repositorio
+## 📂 Organización de Tareas del Curso
 
-Este repositorio contiene la resolución completa de los 15 ejercicios correspondientes al **Capítulo I: Estructuras Básicas**, implementados en lenguaje **C** y **C++**, compilados y verificados con `gcc` y `g++`.
+Este repositorio contiene los trabajos encargados del curso de **Estructura de Datos**, organizados en carpetas independientes con sus códigos fuente, reportes en formato LaTeX / PDF y evidencias de ejecución en consola.
 
-| N° | Archivo | Lenguaje | Descripción |
-|:--:|:--------|:--------:|:------------|
-| 01 | [`ejercicio1.c`](ejercicio1.c) | C | Cálculo de costos de procesamiento de datos por analista (horas y tarifa). |
-| 02 | [`ejercicio2.c`](ejercicio2.c) | C | Registro de observación de datos con tipos de datos adecuados (id, edad, promedio, categoría, validez). |
-| 03 | [`ejercicio3.c`](ejercicio3.c) | C | Conversión explícita (type casting) de sensor decimal a entero y pérdida decimal. |
-| 04 | [`ejercicio4.c`](ejercicio4.c) | C | Operaciones aritméticas completas (+, -, *, /, %) entre registros procesados. |
-| 05 | [`ejercicio5.c`](ejercicio5.c) | C | Distribución uniforme de registros entre nodos de procesamiento y cálculo de residuo. |
-| 06 | [`ejercicio6.c`](ejercicio6.c) | C | Seguimiento de variable acumuladora con operadores de asignación compuesta (`+=`, `*=`). |
-| 07 | [`ejercicio7.c`](ejercicio7.c) | C | Control de calidad de dataset con condiciones mínimas (observaciones y completitud). |
-| 08 | [`ejercicio8.c`](ejercicio8.c) | C | Operadores lógicos (`&&`) para admisión de observaciones al análisis estadístico. |
-| 09 | [`ejercicio9.c`](ejercicio9.c) | C | Clasificación climática de lecturas de sensor térmico (Congelación, Frío, Templado). |
-| 10 | [`ejercicio10.cpp`](ejercicio10.cpp) | C++ | Ciclo `for`, media aritmética y conteo de valores superiores a la media. |
-| 11 | [`ejercicio11.cpp`](ejercicio11.cpp) | C++ | Sistema de autenticación con ciclo `while` y conteo de intentos de acceso. |
-| 12 | [`ejercicio12.cpp`](ejercicio12.cpp) | C++ | Control de flujo con `continue` (descarte de negativos) y `break` (parada con 999). |
-| 13 | [`ejercicio13.c`](ejercicio13.c) | C | Análisis de arreglo unidimensional de 10 edades: mínimo, máximo, media y sobre la media. |
-| 14 | [`ejercicio14.c`](ejercicio14.c) | C | Comparación empírica y teórica de complejidades algorítmicas $O(n)$ vs $O(n^2)$. |
-| 15 | [`ejercicio15.c`](ejercicio15.c) | C | Programación modular con funciones `calcular_promedio` y `contar_superiores_promedio`. |
+```text
+henry-ejercicios/
+├── 📁 Tarea_1_Estructuras_Basicas/   --> 15 ejercicios de Estructuras Básicas (C y C++)
+└── 📁 Tarea_2_Pilas/                --> 5 ejercicios de Pilas (Stack en C++ y C) + Pregunta de Cierre
+```
 
 ---
 
-## Compilación y Ejecución
+### 1. [Tarea 1: Estructuras Básicas (Capítulo I)](Tarea_1_Estructuras_Basicas/)
+Resolución completa de los 15 ejercicios introductorios sobre tipos de datos, operaciones aritméticas, condicionales, bucles y análisis de complejidad $O(n)$ vs $O(n^2)$.
+- 📄 **Informe en PDF:** [`informe_capitulo1.pdf`](Tarea_1_Estructuras_Basicas/informe_capitulo1.pdf)
+- 📝 **Código LaTeX:** [`main.tex`](Tarea_1_Estructuras_Basicas/main.tex)
+- 📦 **Códigos Fuente:** [`ejercicio1.c`](Tarea_1_Estructuras_Basicas/ejercicio1.c) al [`ejercicio15.c`](Tarea_1_Estructuras_Basicas/ejercicio15.c)
 
-Para compilar los programas en C:
-```bash
-gcc ejercicio1.c -o ejercicio1
-./ejercicio1
-```
+---
 
-Para compilar los programas en C++:
-```bash
-g++ ejercicio10.cpp -o ejercicio10
-./ejercicio10
-```
+### 2. [Tarea 2: Pilas / Stack (Capítulo II)](Tarea_2_Pilas/)
+Resolución de los 5 ejercicios de estructuras de datos tipo Pila siguiendo la política **LIFO (Last In, First Out)** en C++ y C, junto a la fundamentación teórica de cierre.
+- 📄 **Informe en PDF:** [`informe_pilas.pdf`](Tarea_2_Pilas/informe_pilas.pdf)
+- 📝 **Código LaTeX:** [`main.tex`](Tarea_2_Pilas/main.tex)
+- 📦 **Códigos Fuente:**
+  1. [`ejercicio1.cpp`](Tarea_2_Pilas/ejercicio1.cpp) - Apilar números enteros
+  2. [`ejercicio2.cpp`](Tarea_2_Pilas/ejercicio2.cpp) - Invertir una palabra
+  3. [`ejercicio3.cpp`](Tarea_2_Pilas/ejercicio3.cpp) - Verificar paréntesis balanceados
+  4. [`ejercicio4.cpp`](Tarea_2_Pilas/ejercicio4.cpp) - Historial de acciones (Deshacer / Undo)
+  5. [`ejercicio5.cpp`](Tarea_2_Pilas/ejercicio5.cpp) - Conversión de decimal a binario
