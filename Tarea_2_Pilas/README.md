@@ -1,30 +1,29 @@
-# Estructura de Datos - Práctica de Pilas (Stack) en C++
+# Tarea 2: Pilas / Stack (Capítulo II)
 
 **Universidad Nacional del Altiplano de Puno**  
 **Facultad de Ingeniería Estadística e Informática**  
 **Escuela Profesional de Ingeniería Estadística e Informática**  
 
 - **Curso:** Estructura de Datos (2026)  
-- **Docente:** Fred Torres Cruz  
+- **Docente:** Prof. Fred Torres Cruz  
 - **Estudiante:** Henry Antonio Mamani Gutierrez  
-- **Repositorio:** [https://github.com/henrymamani-alt/henry-ejercicios](https://github.com/henrymamani-alt/henry-ejercicios)  
+- **Documento Oficial:** [📄 `informe_pilas.pdf`](informe_pilas.pdf)  
+- **Plantilla LaTeX:** [📝 `main.tex`](main.tex)  
 
 ---
 
-## Contenido de la Práctica
+## 📋 Lista de Ejercicios Desarrollados
 
-Este repositorio contiene la resolución completa de los 5 ejercicios prácticos y la pregunta de cierre sobre **Pilas (Stack)**, siguiendo el principio **LIFO (Last In, First Out)** en C++ y C.
-
-| N° | Archivo C++ | Archivo C | Descripción |
-|:--:|:------------|:----------|:------------|
-| 01 | [`ejercicio1.cpp`](ejercicio1.cpp) | [`ejercicio1.c`](ejercicio1.c) | Apilar 5 números enteros y desapilarlos comprobando la política LIFO. |
-| 02 | [`ejercicio2.cpp`](ejercicio2.cpp) | [`ejercicio2.c`](ejercicio2.c) | Invertir una palabra mediante pila de caracteres (ej. DATOS -> SOTAD). |
-| 03 | [`ejercicio3.cpp`](ejercicio3.cpp) | [`ejercicio3.c`](ejercicio3.c) | Verificación de paréntesis balanceados en expresiones matemáticas. |
-| 04 | [`ejercicio4.cpp`](ejercicio4.cpp) | [`ejercicio4.c`](ejercicio4.c) | Simulación de editor con historial de acciones y función Deshacer (Undo). |
-| 05 | [`ejercicio5.cpp`](ejercicio5.cpp) | [`ejercicio5.c`](ejercicio5.c) | Conversión de entero decimal positivo a binario mediante divisiones y residuos. |
+| N° | Ejercicio | Código C++ | Código C | Evidencia | Lógica y Justificación LIFO |
+|:--:|:---|:---:|:---:|:---------:|:---|
+| 01 | **Apilar números enteros** | [`ejercicio1.cpp`](codigo/ejercicio1.cpp) | [`ejercicio1.c`](codigo/ejercicio1.c) | [Captura](imagenes/captura_ejercicio1.png) | Inserción de 5 enteros con `push()` y extracción secuencial con `top()`, `pop()` y `empty()`, saliendo en orden inverso: `20, 16, 12, 8, 4`. |
+| 02 | **Invertir una palabra** | [`ejercicio2.cpp`](codigo/ejercicio2.cpp) | [`ejercicio2.c`](codigo/ejercicio2.c) | [Captura](imagenes/captura_ejercicio2.png) | Apilado de caracteres de una palabra (ej. `DATOS`) y desapilado natural en orden LIFO construyendo `SOTAD`. |
+| 03 | **Paréntesis balanceados** | [`ejercicio3.cpp`](codigo/ejercicio3.cpp) | [`ejercicio3.c`](codigo/ejercicio3.c) | [Captura](imagenes/captura_ejercicio3.png) | Autómata de pila: apila `(` ante apertura y desapila ante `)`. Detecta cierres inválidos o aperturas pendientes. |
+| 04 | **Historial Deshacer (Undo)** | [`ejercicio4.cpp`](codigo/ejercicio4.cpp) | [`ejercicio4.c`](codigo/ejercicio4.c) | [Captura](imagenes/captura_ejercicio4.png) | Menú interactivo de editor para apilar acciones, desapilar (revertir la última acción) y consultar el tope actual con `top()`. |
+| 05 | **Decimal a binario** | [`ejercicio5.cpp`](codigo/ejercicio5.cpp) | [`ejercicio5.c`](codigo/ejercicio5.c) | [Captura](imagenes/captura_ejercicio5.png) | Divisiones sucesivas entre 2 apilando residuos (de LSB a MSB). La pila invierte la salida entregando el binario correcto (ej. `13` $\rightarrow$ `1101`). |
 
 ---
 
-## Pregunta de Cierre
+## 🧠 Pregunta de Cierre
 **¿Qué característica común tienen los cinco problemas que hace apropiado utilizar una pila?**  
 La característica común es la **reversibilidad temporal y la precedencia del último elemento ingresado (LIFO)**. En todos los problemas, el elemento más recientemente registrado o calculado es el que debe procesarse, verificarse o extraerse primero.

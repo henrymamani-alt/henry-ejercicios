@@ -4,6 +4,7 @@
 \usepackage{amsmath, amssymb}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
+\graphicspath{{imagenes/}{./}}
 \usepackage{cancel}
 \usepackage[spanish, es-tabla]{babel}
 \usepackage{hyperref}
@@ -120,7 +121,7 @@ Se solicitan dos variables numéricas en coma flotante (\texttt{float}): \texttt
 Se valida que ambas entradas sean valores no negativos.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio1.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio1.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio1.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -186,7 +187,7 @@ Se seleccionan tipos de datos exactos:
 \end{itemize}
 
 \subsection*{Código Fuente en C (\texttt{ejercicio2.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio2.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio2.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -254,7 +255,7 @@ int main() {
 Se demuestra el operador de moldeo o casting \texttt{(int)medicion\_decimal}. Este operador trunca la parte fraccionaria. La pérdida resultante se cuantifica evaluando la diferencia entre el flotante original y su proyección entera convertida.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio3.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio3.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio3.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -313,7 +314,7 @@ int main() {
 Se solicitan dos cantidades enteras y se procesan las cinco operaciones aritméticas básicas de C (\texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, \texttt{\%}). Se implementa control defensivo en la división y el residuo para evitar excepciones por división entre cero.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio4.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio4.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio4.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -382,7 +383,7 @@ Se aplica la propiedad del algoritmo de la división euclidiana:
 Donde $q = \lfloor \text{total} / \text{nodos} \rfloor$ representa la carga asignada a cada nodo de cómputo y $r = \text{total} \pmod{\text{nodos}}$ son los registros que no pueden ser repartidos de forma estrictamente homogénea.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio5.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio5.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio5.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -450,7 +451,7 @@ Se demuestra el comportamiento temporal de una variable de estado en memoria:
 \end{enumerate}
 
 \subsection*{Código Fuente en C (\texttt{ejercicio6.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio6.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio6.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -509,7 +510,7 @@ Se evalúan simultáneamente dos restricciones cuantitativas mediante conjunció
 Si no se satisface, el programa desglosa cuál de las dos condiciones no fue cumplida.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio7.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio7.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio7.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -580,7 +581,7 @@ Se estructura una regla de admisión basada en dos condiciones deterministas:
 La evaluación por cortocircuito del operador \texttt{\&\&} optimiza la verificación en memoria.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio8.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio8.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio8.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -651,7 +652,7 @@ Se implementa una estructura selectiva múltiple:
 \end{itemize}
 
 \subsection*{Código Fuente en C (\texttt{ejercicio9.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio9.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio9.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -711,7 +712,7 @@ int main() {
 En C++, se utiliza el flujo de entrada \texttt{cin} y salida \texttt{cout}. Un bucle \texttt{for} recopila los 10 registros y acumula la sumatoria. Se computa $\bar{x} = \frac{\sum x_i}{10}$ y un segundo recorrido identifica las observaciones que satisfacen $x_i > \bar{x}$.
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio10.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio10.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio10.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -791,7 +792,7 @@ int main() {
 Se emplea un ciclo condicional indeterminado \texttt{while(!acceso\_concedido)}. Se incrementa el contador de intentos en cada ciclo. Al ingresar la clave correcta (\texttt{2026}), la bandera cambia de estado y el bucle termina informando el balance de intentos.
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio11.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio11.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio11.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -860,7 +861,7 @@ Este ejercicio ilustra la manipulación explícita del flujo de ejecución:
 \end{itemize}
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio12.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio12.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio12.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -943,7 +944,7 @@ Se emplea un arreglo estático \texttt{int edades[10]}. Se procesan en una sola 
 Posteriormente, con la media $\bar{x} = \frac{\sum x_i}{10}$, se filtran aquellos participantes que superan dicho umbral.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio13.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio13.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio13.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -1025,7 +1026,7 @@ Se contrastan experimentalmente las dos clases de complejidad:
 El factor de crecimiento relativo es precisamente $\frac{n^2}{n} = n$, corroborando el costo de las soluciones no lineales en el procesamiento de datos masivos.
 
 \subsection*{Código Fuente en C (\texttt{ejercicio14.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio14.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio14.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -1105,7 +1106,7 @@ Se aplican los principios de programación estructurada y modularización:
 \end{enumerate}
 
 \subsection*{Código Fuente en C (\texttt{ejercicio15.c})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/ejercicio15.c}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_1_Estructuras_Basicas/codigo/ejercicio15.c}
 
 \begin{lstlisting}[language=C]
 #include <stdio.h>

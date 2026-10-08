@@ -4,7 +4,8 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphics}
 \usepackage{fancyhdr}				% For fancy header/footer
-\usepackage{graphicx}				% For including figure/image
+\usepackage{graphicx}
+\graphicspath{{imagenes/}{./}}				% For including figure/image
 \usepackage{cancel}				% To use the slash to cancel out stuff in work
 \usepackage[spanish, es-tabla]{babel}
 \usepackage{hyperref}
@@ -123,7 +124,7 @@ Para cada uno de los cinco (5) problemas y la pregunta de cierre se incluye:
 Se declara una estructura \texttt{stack<int> pila}. En la fase de inserción se leen los cinco enteros y se insertan secuencialmente mediante \texttt{pila.push(valor)}. El último número ingresado (\texttt{20}) queda situado en el tope de la pila. En la fase de extracción, mientras la pila no esté vacía (\texttt{!pila.empty()}), se consulta el elemento superior con \texttt{pila.top()} y se remueve con \texttt{pila.pop()}. Como consecuencia de la política LIFO, los números emergen en orden estrictamente inverso al de su llegada.
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio1.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio1.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio1.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -192,7 +193,7 @@ Una palabra es una secuencia lineal ordenada de caracteres $C = \langle c_1, c_2
 Al desapilar consecutivamente hasta vaciar la pila, los caracteres son extraídos en el orden $\langle c_n, c_{n-1}, \dots, c_1 \rangle$. Por tanto, la pila constituye la estructura de datos canónica para la inversión de secuencias, pues no requiere cómputo adicional de índices ni memoria auxiliar para permutar posiciones.
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio2.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio2.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio2.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -269,7 +270,7 @@ Este problema representa el análisis sintáctico clásico de lenguajes formales
 \end{itemize}
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio3.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio3.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio3.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -352,7 +353,7 @@ Los editores de software y entornos de desarrollo gestionan el historial de oper
 Cuando el usuario invoca la funcionalidad \textbf{Deshacer (Undo)}, el sistema consulta \texttt{pila.top()} para conocer la acción más reciente, revierte sus efectos y la expulsa con \texttt{pila.pop()}. Al implementar la inspección del tope sin desapilar (\texttt{top()}), el usuario puede visualizar en todo momento cuál será la próxima acción a ser revertida.
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio4.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio4.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio4.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -455,7 +456,7 @@ El primer residuo obtenido corresponde al bit menos significativo (\textit{LSB},
 Por tanto, al apilar cada residuo (\texttt{push(residuo)}) y posteriormente desapilarlos (\texttt{pop()}), el orden de extracción invierte la secuencia generada, presentándola exactamente desde el bit de mayor peso hasta el de menor peso (formato de lectura convencional de izquierda a derecha).
 
 \subsection*{Código Fuente en C++ (\texttt{ejercicio5.cpp})}
-\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/ejercicio5.cpp}
+\noindent\textbf{Enlace al Repositorio:} \url{https://github.com/henrymamani-alt/henry-ejercicios/blob/main/Tarea_2_Pilas/codigo/ejercicio5.cpp}
 
 \begin{lstlisting}[language=C++]
 #include <iostream>
