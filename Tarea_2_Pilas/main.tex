@@ -69,18 +69,18 @@
 \begin{document}
 
 % ========================================================
-% CARÁTULA / PRESENTACIÓN INSTITUCIONAL
+% PÁGINA 1: CARÁTULA / PRESENTACIÓN INSTITUCIONAL
 % ========================================================
 \noindent
 \begin{minipage}{0.18\textwidth}
     \centering
     \IfFileExists{logo-una-puno.png}{%
-        \includegraphics[height=2.2cm, keepaspectratio]{logo-una-puno.png}%
+        \includegraphics[height=2.3cm, keepaspectratio]{logo-una-puno.png}%
     }{%
         \IfFileExists{imagenes/logo-una-puno.png}{%
-            \includegraphics[height=2.2cm, keepaspectratio]{imagenes/logo-una-puno.png}%
+            \includegraphics[height=2.3cm, keepaspectratio]{imagenes/logo-una-puno.png}%
         }{%
-            \framebox[2.2cm][c]{\footnotesize Logo UNAP}%
+            \framebox[2.3cm][c]{\footnotesize Logo UNAP}%
         }%
     }
 \end{minipage}%
@@ -95,12 +95,12 @@
 \begin{minipage}{0.18\textwidth}
     \centering
     \IfFileExists{logofinesi.png}{%
-        \includegraphics[height=2.2cm, keepaspectratio]{logofinesi.png}%
+        \includegraphics[height=2.3cm, keepaspectratio]{logofinesi.png}%
     }{%
         \IfFileExists{imagenes/logofinesi.png}{%
-            \includegraphics[height=2.2cm, keepaspectratio]{imagenes/logofinesi.png}%
+            \includegraphics[height=2.3cm, keepaspectratio]{imagenes/logofinesi.png}%
         }{%
-            \framebox[2.2cm][c]{\footnotesize Logo FINESI}%
+            \framebox[2.3cm][c]{\footnotesize Logo FINESI}%
         }%
     }
 \end{minipage}
@@ -124,7 +124,7 @@
 \end{center}
 \vspace{2mm}
 
-\noindent\textbf{Presentación:} A continuación se detalla la resolución formal de los cinco (5) ejercicios prácticos correspondientes al tema de \textbf{Pilas (Stack) en C++ y C}. Para cada ejercicio se incluye el enunciado oficial, el análisis computacional del algoritmo, el código fuente completo en C++, el enlace directo verificado a GitHub y la captura gráfica de evidencia de ejecución exitosa en terminal.
+\noindent\textbf{Presentación:} A continuación se detalla la resolución formal de los cinco (5) ejercicios prácticos correspondientes al tema de \textbf{Pilas (Stack) en C++ y C}. Para cada ejercicio se incluye el enunciado oficial, el análisis computacional del algoritmo, el código fuente completo en C++, el enlace directo verificado a GitHub y la captura gráfica ampliada de evidencia de ejecución exitosa en terminal.
 
 \vfill
 \begin{center}
@@ -136,7 +136,7 @@
 \newpage
 
 % ========================================================
-% EJERCICIO 1
+% EJERCICIO 1: DESCRIPCIÓN Y CÓDIGO
 % ========================================================
 \begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
 Ejercicio 1: Apilar números enteros
@@ -199,16 +199,23 @@ int main() {
 }
 \end{lstlisting}
 
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
+\newpage
+% ========================================================
+% EJERCICIO 1: EVIDENCIA EN TAMAÑO COMPLETO
+% ========================================================
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
+\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 1}
+\end{tcolorbox}
+\vspace{3mm}
+
 \begin{center}
 \IfFileExists{captura_ejercicio1.png}{%
-    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio1.png}%
+    \includegraphics[width=0.98\textwidth]{captura_ejercicio1.png}%
 }{%
     \IfFileExists{imagenes/captura_ejercicio1.png}{%
-        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio1.png}%
+        \includegraphics[width=0.98\textwidth]{imagenes/captura_ejercicio1.png}%
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio1.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{4mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio1.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{4mm}}}%
     }%
 }
 \end{center}
@@ -216,7 +223,7 @@ int main() {
 \newpage
 
 % ========================================================
-% EJERCICIO 2
+% EJERCICIO 2: DESCRIPCIÓN Y CÓDIGO
 % ========================================================
 \begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
 Ejercicio 2: Invertir una palabra
@@ -284,16 +291,23 @@ int main() {
 }
 \end{lstlisting}
 
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
+\newpage
+% ========================================================
+% EJERCICIO 2: EVIDENCIA EN TAMAÑO COMPLETO
+% ========================================================
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
+\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 2}
+\end{tcolorbox}
+\vspace{3mm}
+
 \begin{center}
 \IfFileExists{captura_ejercicio2.png}{%
-    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio2.png}%
+    \includegraphics[width=0.98\textwidth]{captura_ejercicio2.png}%
 }{%
     \IfFileExists{imagenes/captura_ejercicio2.png}{%
-        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio2.png}%
+        \includegraphics[width=0.98\textwidth]{imagenes/captura_ejercicio2.png}%
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio2.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{4mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio2.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{4mm}}}%
     }%
 }
 \end{center}
@@ -301,7 +315,7 @@ int main() {
 \newpage
 
 % ========================================================
-% EJERCICIO 3
+% EJERCICIO 3: DESCRIPCIÓN Y CÓDIGO
 % ========================================================
 \begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
 Ejercicio 3: Verificar paréntesis balanceados
@@ -372,16 +386,23 @@ int main() {
 }
 \end{lstlisting}
 
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
+\newpage
+% ========================================================
+% EJERCICIO 3: EVIDENCIA EN TAMAÑO COMPLETO
+% ========================================================
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
+\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 3}
+\end{tcolorbox}
+\vspace{3mm}
+
 \begin{center}
 \IfFileExists{captura_ejercicio3.png}{%
-    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio3.png}%
+    \includegraphics[width=0.98\textwidth]{captura_ejercicio3.png}%
 }{%
     \IfFileExists{imagenes/captura_ejercicio3.png}{%
-        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio3.png}%
+        \includegraphics[width=0.98\textwidth]{imagenes/captura_ejercicio3.png}%
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio3.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{4mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio3.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{4mm}}}%
     }%
 }
 \end{center}
@@ -389,7 +410,7 @@ int main() {
 \newpage
 
 % ========================================================
-% EJERCICIO 4
+% EJERCICIO 4: DESCRIPCIÓN Y CÓDIGO
 % ========================================================
 \begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
 Ejercicio 4: Historial de acciones - Deshacer (Undo)
@@ -428,14 +449,6 @@ void mostrarTope(const stack<string>& historial) {
 
 int main() {
     stack<string> historial;
-    int opcion;
-    string accion;
-
-    cout << "=====================================================" << endl;
-    cout << "     EJERCICIO 4: SIMULADOR DE DESHACER (UNDO)       " << endl;
-    cout << "=====================================================" << endl;
-
-    // Ejecucion simulada del flujo del editor
     string accionesDemo[] = {"Escribir parrafo 1", "Copiar tabla de datos", "Eliminar fila 3"};
     for (const string& a : accionesDemo) {
         historial.push(a);
@@ -455,16 +468,23 @@ int main() {
 }
 \end{lstlisting}
 
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
+\newpage
+% ========================================================
+% EJERCICIO 4: EVIDENCIA EN TAMAÑO COMPLETO
+% ========================================================
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
+\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 4}
+\end{tcolorbox}
+\vspace{3mm}
+
 \begin{center}
 \IfFileExists{captura_ejercicio4.png}{%
-    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio4.png}%
+    \includegraphics[width=0.98\textwidth]{captura_ejercicio4.png}%
 }{%
     \IfFileExists{imagenes/captura_ejercicio4.png}{%
-        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio4.png}%
+        \includegraphics[width=0.98\textwidth]{imagenes/captura_ejercicio4.png}%
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio4.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{4mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio4.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{4mm}}}%
     }%
 }
 \end{center}
@@ -472,7 +492,7 @@ int main() {
 \newpage
 
 % ========================================================
-% EJERCICIO 5
+% EJERCICIO 5: DESCRIPCIÓN Y CÓDIGO
 % ========================================================
 \begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
 Ejercicio 5: Conversión de decimal a binario
@@ -541,21 +561,25 @@ int main() {
 }
 \end{lstlisting}
 
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} EVIDENCIA DE EJECUCIÓN EN CONSOLA:}}
+\newpage
+% ========================================================
+% EJERCICIO 5: EVIDENCIA EN TAMAÑO COMPLETO
+% ========================================================
+\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
+\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 5}
+\end{tcolorbox}
+\vspace{3mm}
+
 \begin{center}
 \IfFileExists{captura_ejercicio5.png}{%
-    \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{captura_ejercicio5.png}%
+    \includegraphics[width=0.98\textwidth]{captura_ejercicio5.png}%
 }{%
     \IfFileExists{imagenes/captura_ejercicio5.png}{%
-        \includegraphics[width=0.92\textwidth, height=3.8cm, keepaspectratio]{imagenes/captura_ejercicio5.png}%
+        \includegraphics[width=0.98\textwidth]{imagenes/captura_ejercicio5.png}%
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering\vspace{3mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio5.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{3mm}}}%
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{4mm}\textbf{Evidencia de consola:} \texttt{captura\_ejercicio5.png}\\\small(Sube la imagen a Overleaf para visualizarla)\vspace{4mm}}}%
     }%
 }
 \end{center}
-
-\vspace{4mm}
-\hrule
 
 \end{document}
