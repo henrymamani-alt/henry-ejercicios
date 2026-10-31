@@ -150,3 +150,4 @@ for title, lines, filename, h in exercises:
     print(f"Generada: {filename}")
 
 print("\nTodas las capturas generadas con éxito en:", DIR_IMG)
+

@@ -33,3 +33,4 @@ int main(void) {
     printf("%d %d\n", ns, eo);
     return 0;
 }
+

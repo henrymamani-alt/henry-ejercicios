@@ -81,3 +81,4 @@ Trabajo_Recuperacion_Estructura_de_Datos/
 - **Espacio 3:** `tope` *(Total de admitidos)*
 - **Espacio 4:** `--tope` *(Desapilado e impresión en orden inverso LIFO)*
 - **Resultado Ejemplo:** `4 -> Elena, Luis, Maria, Carlos`
+

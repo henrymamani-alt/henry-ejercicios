@@ -1,7 +1,7 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
-\usepackage[margin=1.6cm, top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage[margin=1.4cm, top=1.2cm, bottom=1.4cm]{geometry}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath, amssymb}
@@ -13,18 +13,14 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 
-% Paleta institucional UNA Puno / FINESI
-\definecolor{azulunap}{RGB}{0, 51, 102}      % #003366 Azul Institucional
-\definecolor{azulborde}{RGB}{2, 132, 199}    % #0284c7 Azul Celeste
-\definecolor{fondocaja}{RGB}{248, 250, 252}  % #f8fafc Fondo suave
-\definecolor{fondocodigo}{RGB}{15, 23, 42}   % #0f172a Fondo oscuro terminal
-\definecolor{textocodigo}{RGB}{226, 232, 240}% #e2e8f0 Texto codigo
-\definecolor{verdecompletado}{RGB}{22, 101, 52} % Verde esmeralda para resaltado
-\definecolor{fondoresaltado}{RGB}{220, 252, 231} % Fondo verde claro
-\definecolor{kwcolor}{RGB}{244, 63, 94}
-\definecolor{fncolor}{RGB}{56, 189, 248}
-\definecolor{strcolor}{RGB}{253, 224, 71}
-\definecolor{numcolor}{RGB}{167, 139, 250}
+% Paleta de colores
+\definecolor{azulunap}{RGB}{0, 51, 102}
+\definecolor{azulborde}{RGB}{2, 132, 199}
+\definecolor{fondocaja}{RGB}{248, 250, 252}
+\definecolor{fondocodigo}{RGB}{248, 250, 252}
+\definecolor{verdecompletado}{RGB}{21, 128, 61}
+\definecolor{fondoresaltado}{RGB}{220, 252, 231}
+\definecolor{bordeverde}{RGB}{34, 197, 94}
 
 \hypersetup{
     colorlinks=true,
@@ -36,119 +32,42 @@
 % Encabezado y pie de pagina
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\textbf{\color{azulunap}Recuperación de Estructuras de Datos (2026)}}
-\fancyhead[C]{\small FINESI -- UNA PUNO}
-\fancyhead[R]{\small Prof. Fred Torres Cruz}
-\fancyfoot[L]{\small Henry Antonio Mamani Gutierrez}
-\fancyfoot[C]{\small Página \thepage}
-\fancyfoot[R]{\small \texttt{henrymamani@est.unap.edu.pe}}
-\renewcommand{\headrulewidth}{0.6pt}
-\renewcommand{\footrulewidth}{0.6pt}
+\fancyfoot[L]{\footnotesize Mamani Gutierrez Henry Antonio -- Estructura de Datos}
+\fancyfoot[C]{\footnotesize Página \thepage\ de 5}
+\fancyfoot[R]{\footnotesize \url{https://github.com/henrymamani-alt/henry-ejercicios}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \newcommand{\codigoResaltado}[1]{\colorbox{fondoresaltado}{\textbf{\color{verdecompletado}\texttt{#1}}}}
 
 \begin{document}
 
 % ========================================================
-% PÁGINA 1: CARÁTULA INSTITUCIONAL
+% PÁGINA 1: EJERCICIO 1
 % ========================================================
 \noindent
-\begin{minipage}{0.18\textwidth}
-    \centering
-    \IfFileExists{logo-una-puno.png}{%
-        \includegraphics[height=2.3cm, keepaspectratio]{logo-una-puno.png}%
-    }{%
-        \framebox[2.3cm][c]{\footnotesize Logo UNAP}%
-    }
-\end{minipage}%
-\hfill
-\begin{minipage}{0.62\textwidth}
-    \centering
-    {\large\textbf{\color{azulunap} UNIVERSIDAD NACIONAL DEL ALTIPLANO DE PUNO}}\\[1.5mm]
-    {\normalsize\textbf{FACULTAD DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}}\\[1mm]
-    {\footnotesize\textbf{\color{black!70} ESCUELA PROFESIONAL DE INGENIERÍA ESTADÍSTICA E INFORMÁTICA}}
-\end{minipage}%
-\hfill
-\begin{minipage}{0.18\textwidth}
-    \centering
-    \IfFileExists{logofinesi.png}{%
-        \includegraphics[height=2.3cm, keepaspectratio]{logofinesi.png}%
-    }{%
-        \framebox[2.3cm][c]{\footnotesize Logo FINESI}%
-    }
-\end{minipage}
+{\small\textbf{FINESI -- Estructuras de Datos} \hfill \textbf{Evaluación práctica (Recuperación)}}
+\vspace{1mm}\hrule\vspace{2mm}
 
-\vspace{3mm}
-\noindent{\color{azulunap}\rule{\textwidth}{1.5pt}}
-\vspace{2mm}
-
-\begin{tcolorbox}[colback=fondocaja, colframe=azulunap, leftrule=4mm, arc=1mm, boxrule=0.5pt, top=2.5mm, bottom=2.5mm]
-\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
-\textbf{Asignatura:} Estructura de Datos (2026) & \textbf{Docente:} Prof. Fred Torres Cruz \\
-\textbf{Estudiante:} Henry Antonio Mamani Gutierrez & \textbf{Semestre / Ciclo:} III Semestre \\
-\textbf{Fecha de Evaluación:} 30 de Octubre de 2026 & \textbf{Correo:} \texttt{henrymamani@est.unap.edu.pe} \\
-\multicolumn{2}{p{0.96\textwidth}}{\textbf{Modalidad:} Evaluación Práctica Presencial -- Trabajo de Recuperación}
-\end{tabular}
-\end{tcolorbox}
-
-\vspace{5mm}
 \begin{center}
-{\Large\textbf{\color{azulunap} RECUPERACIÓN DE ESTRUCTURAS DE DATOS}}\\[2mm]
-{\normalsize\textbf{\color{azulborde} RESOLUCIÓN FORMAL Y COMPLETACIÓN DE ESPACIOS DE CÓDIGO}}
+{\large\textbf{RECUPERACIÓN DE ESTRUCTURAS DE DATOS}}
 \end{center}
-\vspace{2mm}
-
-\noindent\textbf{Presentación Institucional:} A continuación se presenta el informe formal y desarrollo técnico de los cinco (5) problemas planteados en la evaluación práctica de recuperación de la asignatura \textbf{Estructura de Datos}.
-
-Para cada problema se incluye el enunciado oficial, el análisis algorítmico y matemático, la tabla de respuestas con la justificación técnica de cada espacio completado, el código fuente completo en C estándar (C11) con los \textbf{espacios completados resaltados visualmente en color verde}, y la evidencia gráfica ampliada de compilación y ejecución interactiva mediante \textbf{Visual Studio Code en entorno Windows 11}.
-
-\vfill
-\begin{center}
-    \small\color{black!60}
-    Facultad de Ingeniería Estadística e Informática -- UNA Puno\\
-    Puno, Perú -- 2026
-\end{center}
-
-\newpage
-
-% ========================================================
-% EJERCICIO 1: DESCRIPCIÓN Y CÓDIGO
-% ========================================================
-\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
-Ejercicio 1: Suma de números impares
-\end{tcolorbox}
-
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
-\textbf{Enunciado Oficial:} Lea un entero positivo y muestre la suma de todos los números impares menores o iguales a él (ejemplo: \texttt{10} $\rightarrow$ \texttt{25}).
-\end{tcolorbox}
-
-\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
-{\small El problema consiste en calcular la suma de la subsecuencia de enteros congruentes con $1 \pmod 2$ en el rango $[1, n]$. Se inicializa $i = 1$ (primer impar positivo) y se avanza secuencialmente ($i = i + 1$). La cláusula condicional \texttt{i \% 2 != 0} evalúa la paridad mediante aritmética modular; al ser impar, acumula $suma = suma + i$. Complejidad temporal: $O(n)$, memoria: $O(1)$.}
-
-\vspace{2mm}
-\noindent{\textbf{\color{azulunap} TABLA DE RESPUESTAS -- ESPACIOS COMPLETADOS:}}
 \vspace{1mm}
-\begin{center}
+
+\begin{tcolorbox}[colback=fondocaja, colframe=black!30, arc=1mm, boxrule=0.5pt, top=1.5mm, bottom=1.5mm]
 \small
-\begin{tabular}{|p{0.28\textwidth}|p{0.22\textwidth}|p{0.44\textwidth}|}
-\hline
-\rowcolor{fondocaja}\textbf{Espacio Evaluado} & \textbf{Código Completado} & \textbf{Justificación Técnica / Algorítmica} \\
-\hline
-Espacio 1: Inicialización & \codigoResaltado{1} & Inicia el recorrido en el primer entero impar positivo. \\
-\hline
-Espacio 2: Paso incremento & \codigoResaltado{i + 1} & Incrementa de 1 en 1 para evaluar exhaustivamente cada entero hasta $n$. \\
-\hline
-Espacio 3: Condición impar & \codigoResaltado{i \% 2 != 0} & Evalúa si el residuo al dividir entre 2 es distinto de cero. \\
-\hline
-Espacio 4: Acumulador & \codigoResaltado{suma + i} & Acumula el valor impar actual en la variable acumuladora. \\
-\hline
-\end{tabular}
-\end{center}
-
+\textbf{Apellidos y nombres:} Mamani Gutierrez Henry Antonio \hfill \textbf{Fecha:} 30/10/26\\
+\textbf{Asignatura:} Estructura de Datos (2026) -- Prof. Fred Torres Cruz \hfill \textbf{Modalidad:} Trabajo de Recuperación\\[1mm]
+\textbf{Repositorio en GitHub:} \url{https://github.com/henrymamani-alt/henry-ejercicios}
+\end{tcolorbox}
 \vspace{1mm}
-\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C (\texttt{ejercicio1.c}) CON ESPACIOS RESALTADOS:}}
-\begin{tcolorbox}[colback=fondocodigo, colframe=fondocodigo, arc=1.5mm, top=2mm, bottom=2mm]
-\small\color{textocodigo}\ttfamily
+
+\noindent\textbf{\large 1. Suma de números impares.}\\
+{\small Lea un entero positivo y muestre la suma de todos los números impares menores o iguales a él (ejemplo: \texttt{10} $\rightarrow$ \texttt{25}).}
+
+\vspace{1.5mm}
+\begin{tcolorbox}[colback=fondocodigo, colframe=azulborde, leftrule=2mm, arc=1mm, boxrule=0.5pt, top=1.5mm, bottom=1.5mm]
+\small\ttfamily
 \#include <stdio.h>\\[1mm]
 int main(void) \{\\
 \hspace*{4mm}int n, i, suma = 0;\\
@@ -163,12 +82,17 @@ int main(void) \{\\
 \}
 \end{tcolorbox}
 
-\newpage
-% EJERCICIO 1: EVIDENCIA EN TAMAÑO COMPLETO
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
-\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 1}
+\vspace{1mm}
+\begin{tcolorbox}[colback=fondoresaltado, colframe=bordeverde, arc=1mm, boxrule=0.5pt, top=1.2mm, bottom=1.2mm]
+\footnotesize
+\textbf{Espacios completados en el código:}\\
+$\bullet$ \textbf{Espacio 1:} \texttt{1} -- Inicia en el primer número impar positivo.\\
+$\bullet$ \textbf{Espacio 2:} \texttt{i + 1} -- Paso de incremento secuencial de 1 en 1.\\
+$\bullet$ \textbf{Espacio 3:} \texttt{i \% 2 != 0} -- Condición para verificar si el número es impar.\\
+$\bullet$ \textbf{Espacio 4:} \texttt{suma + i} -- Acumula el valor impar en la suma.
 \end{tcolorbox}
-\vspace{2mm}
+
+\vfill
 \begin{center}
 \includegraphics[width=0.98\textwidth]{captura_ejercicio1.png}
 \end{center}
@@ -176,43 +100,17 @@ int main(void) \{\\
 \newpage
 
 % ========================================================
-% EJERCICIO 2: DESCRIPCIÓN Y CÓDIGO
+% PÁGINA 2: EJERCICIO 2
 % ========================================================
-\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
-Ejercicio 2: Conteo de calles
-\end{tcolorbox}
+\fancyhead[L]{\footnotesize\textbf{FINESI -- Estructuras de Datos (Recuperación)} | Prof. Fred Torres Cruz}
+\fancyhead[R]{\footnotesize Mamani Gutierrez Henry Antonio | 30/10/26}
 
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
-\textbf{Enunciado Oficial:} Lea n códigos de dirección: 1 representa Norte-Sur y 2 representa Este-Oeste. Imprima los totales respectivos (ejemplo: \texttt{1 1 2 1 2 1} $\rightarrow$ \texttt{4 2}).
-\end{tcolorbox}
+\noindent\textbf{\large 2. Conteo de calles.}\\
+{\small Lea n códigos de dirección: 1 representa Norte-Sur y 2 representa Este-Oeste. Imprima los totales respectivos (ejemplo: \texttt{1 1 2 1 2 1} $\rightarrow$ \texttt{4 2}).}
 
-\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
-{\small Se procesa un conjunto finito de $n$ mediciones discretas binarias. Un bucle $for$ iterando $i < n$ captura cada valor. La condición $x == 1$ identifica el tráfico axial Norte-Sur ($ns++$), mientras que $else\ if\ (x == 2)$ atiende el eje transversal Este-Oeste ($eo++$). Complejidad temporal lineal $O(n)$, memoria auxiliar $O(1)$.}
-
-\vspace{2mm}
-\noindent{\textbf{\color{azulunap} TABLA DE RESPUESTAS -- ESPACIOS COMPLETADOS:}}
-\vspace{1mm}
-\begin{center}
-\small
-\begin{tabular}{|p{0.28\textwidth}|p{0.22\textwidth}|p{0.44\textwidth}|}
-\hline
-\rowcolor{fondocaja}\textbf{Espacio Evaluado} & \textbf{Código Completado} & \textbf{Justificación Técnica / Algorítmica} \\
-\hline
-Espacio 1: Límite del for & \codigoResaltado{i < n} & Controla la condición de parada para leer exactamente $n$ códigos. \\
-\hline
-Espacio 2: Condición N-S & \codigoResaltado{x == 1} & Identifica el código 1 asignado al eje geográfico Norte-Sur. \\
-\hline
-Espacio 3: Contador N-S & \codigoResaltado{ns++} & Incrementa el acumulador de calles con orientación Norte-Sur. \\
-\hline
-Espacio 4: Contador E-O & \codigoResaltado{eo++} & Incrementa el acumulador de calles con orientación Este-Oeste. \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C (\texttt{ejercicio2.c}) CON ESPACIOS RESALTADOS:}}
-\begin{tcolorbox}[colback=fondocodigo, colframe=fondocodigo, arc=1.5mm, top=2mm, bottom=2mm]
-\small\color{textocodigo}\ttfamily
+\vspace{1.5mm}
+\begin{tcolorbox}[colback=fondocodigo, colframe=azulborde, leftrule=2mm, arc=1mm, boxrule=0.5pt, top=1.5mm, bottom=1.5mm]
+\small\ttfamily
 \#include <stdio.h>\\[1mm]
 int main(void) \{\\
 \hspace*{4mm}int n, x, i, ns = 0, eo = 0;\\
@@ -230,12 +128,17 @@ int main(void) \{\\
 \}
 \end{tcolorbox}
 
-\newpage
-% EJERCICIO 2: EVIDENCIA EN TAMAÑO COMPLETO
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
-\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 2}
+\vspace{1mm}
+\begin{tcolorbox}[colback=fondoresaltado, colframe=bordeverde, arc=1mm, boxrule=0.5pt, top=1.2mm, bottom=1.2mm]
+\footnotesize
+\textbf{Espacios completados en el código:}\\
+$\bullet$ \textbf{Espacio 1:} \texttt{i < n} -- Condición del for para leer exactamente los n códigos.\\
+$\bullet$ \textbf{Espacio 2:} \texttt{x == 1} -- Verifica si el código corresponde al eje Norte-Sur.\\
+$\bullet$ \textbf{Espacio 3:} \texttt{ns++} -- Incrementa el contador Norte-Sur.\\
+$\bullet$ \textbf{Espacio 4:} \texttt{eo++} -- Incrementa el contador Este-Oeste.
 \end{tcolorbox}
-\vspace{2mm}
+
+\vfill
 \begin{center}
 \includegraphics[width=0.98\textwidth]{captura_ejercicio2.png}
 \end{center}
@@ -243,43 +146,14 @@ int main(void) \{\\
 \newpage
 
 % ========================================================
-% EJERCICIO 3: DESCRIPCIÓN Y CÓDIGO
+% PÁGINA 3: EJERCICIO 3
 % ========================================================
-\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
-Ejercicio 3: Verificación de paréntesis con una pila
-\end{tcolorbox}
+\noindent\textbf{\large 3. Verificación de paréntesis con una pila.}\\
+{\small Lea una cadena compuesta solamente por ( y ). Escriba BALANCEADO si sus paréntesis están correctamente emparejados; en caso contrario, NO BALANCEADO. Complete cuatro espacios.}
 
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
-\textbf{Enunciado Oficial:} Lea una cadena compuesta solamente por \texttt{(} y \texttt{)}. Escriba \texttt{BALANCEADO} si sus paréntesis están correctamente emparejados; en caso contrario, \texttt{NO BALANCEADO}. Complete cuatro espacios.
-\end{tcolorbox}
-
-\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
-{\small Se implementa una pila de caracteres mediante un arreglo estático indexado por la variable $tope$. Cada apertura \texttt{(} se apila con $pila[tope++] = '('.$ Cada cierre \texttt{)} exige verificar subdesbordamiento ($tope == 0$). Al finalizar, la invariante de balanceo formal exige que la bandera sea válida y la pila esté vacía ($valido\ \&\&\ tope == 0$). Complejidad temporal $O(L)$, donde $L$ es la longitud de la cadena.}
-
-\vspace{2mm}
-\noindent{\textbf{\color{azulunap} TABLA DE RESPUESTAS -- ESPACIOS COMPLETADOS:}}
-\vspace{1mm}
-\begin{center}
-\small
-\begin{tabular}{|p{0.28\textwidth}|p{0.25\textwidth}|p{0.41\textwidth}|}
-\hline
-\rowcolor{fondocaja}\textbf{Espacio Evaluado} & \textbf{Código Completado} & \textbf{Justificación Técnica / Algorítmica} \\
-\hline
-Espacio 1: Apilado (Push) & \codigoResaltado{tope++} & Inserta en el tope actual y avanza el apuntador de la pila. \\
-\hline
-Espacio 2: Subdesbordamiento & \codigoResaltado{tope == 0} & Detecta un cierre sin apertura pendiente disponible. \\
-\hline
-Espacio 3: Desapilado (Pop) & \codigoResaltado{tope--} & Retira la apertura emparejada decrementando el tope. \\
-\hline
-Espacio 4: Balanceo final & \codigoResaltado{valido \&\& tope == 0} & Condición necesaria y suficiente de balanceo completo. \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C (\texttt{ejercicio3.c}) CON ESPACIOS RESALTADOS:}}
-\begin{tcolorbox}[colback=fondocodigo, colframe=fondocodigo, arc=1.5mm, top=2mm, bottom=2mm]
-\small\color{textocodigo}\ttfamily
+\vspace{1.5mm}
+\begin{tcolorbox}[colback=fondocodigo, colframe=azulborde, leftrule=2mm, arc=1mm, boxrule=0.5pt, top=1.5mm, bottom=1.5mm]
+\small\ttfamily
 \#include <stdio.h>\\
 \#include <string.h>\\[1mm]
 int main(void) \{\\
@@ -305,12 +179,17 @@ int main(void) \{\\
 \}
 \end{tcolorbox}
 
-\newpage
-% EJERCICIO 3: EVIDENCIA EN TAMAÑO COMPLETO
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
-\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 3}
+\vspace{1mm}
+\begin{tcolorbox}[colback=fondoresaltado, colframe=bordeverde, arc=1mm, boxrule=0.5pt, top=1.2mm, bottom=1.2mm]
+\footnotesize
+\textbf{Espacios completados en el código:}\\
+$\bullet$ \textbf{Espacio 1:} \texttt{tope++} -- Apila '(' en la posición tope y avanza el cursor.\\
+$\bullet$ \textbf{Espacio 2:} \texttt{tope == 0} -- Detecta si la pila está vacía al intentar cerrar (error).\\
+$\bullet$ \textbf{Espacio 3:} \texttt{tope--} -- Desapila el '(' emparejado decrementando el tope.\\
+$\bullet$ \textbf{Espacio 4:} \texttt{valido \&\& tope == 0} -- Verifica que no hubo error y que la pila quedó vacía.
 \end{tcolorbox}
-\vspace{2mm}
+
+\vfill
 \begin{center}
 \includegraphics[width=0.98\textwidth]{captura_ejercicio3.png}
 \end{center}
@@ -318,43 +197,14 @@ int main(void) \{\\
 \newpage
 
 % ========================================================
-% EJERCICIO 4: DESCRIPCIÓN Y CÓDIGO
+% PÁGINA 4: EJERCICIO 4
 % ========================================================
-\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
-Ejercicio 4: Baúl con operaciones en ambos extremos
-\end{tcolorbox}
+\noindent\textbf{\large 4. Baúl con operaciones en ambos extremos.}\\
+{\small Use un arreglo como doble cola (deque). Las operaciones permiten insertar y retirar elementos por ambos extremos. Considere hasta 100 operaciones y valores enteros.}
 
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
-\textbf{Enunciado Oficial:} Use un arreglo como doble cola (deque). Las operaciones permiten insertar y retirar elementos por ambos extremos. Considere hasta 100 operaciones y valores enteros.
-\end{tcolorbox}
-
-\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
-{\small Una doble cola (deque) descentralizada se ubica en $a[205]$ fijando $ini = 100$ y $fin = 100$. La inserción en el extremo superior (\texttt{PUSH\_TOP}) expande el rango a la izquierda mediante predecremento ($a[{-}{-}ini] = x$). La inserción en el fondo (\texttt{PUSH\_BOTTOM}) expande a la derecha ($a[fin++] = x$). La contracción por el tope incrementa $ini++$, y por el fondo decrementa $fin{-}{-}$. Todas las operaciones operan en tiempo óptimo $O(1)$.}
-
-\vspace{2mm}
-\noindent{\textbf{\color{azulunap} TABLA DE RESPUESTAS -- ESPACIOS COMPLETADOS:}}
-\vspace{1mm}
-\begin{center}
-\small
-\begin{tabular}{|p{0.28\textwidth}|p{0.22\textwidth}|p{0.44\textwidth}|}
-\hline
-\rowcolor{fondocaja}\textbf{Espacio Evaluado} & \textbf{Código Completado} & \textbf{Justificación Técnica / Algorítmica} \\
-\hline
-Espacio 1: PUSH\_TOP & \codigoResaltado{--ini} & Pre-decrementa el índice inicial para insertar a la izquierda. \\
-\hline
-Espacio 2: PUSH\_BOTTOM & \codigoResaltado{fin++} & Inserta en el índice final y post-incrementa el límite derecho. \\
-\hline
-Espacio 3: POP\_TOP & \codigoResaltado{ini++} & Avanza el puntero inicial suprimiendo el elemento frontal. \\
-\hline
-Espacio 4: POP\_BOTTOM & \codigoResaltado{fin--} & Retrocede el puntero final suprimiendo el elemento posterior. \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C (\texttt{ejercicio4.c}) CON ESPACIOS RESALTADOS:}}
-\begin{tcolorbox}[colback=fondocodigo, colframe=fondocodigo, arc=1.5mm, top=2mm, bottom=2mm]
-\small\color{textocodigo}\ttfamily
+\vspace{1.5mm}
+\begin{tcolorbox}[colback=fondocodigo, colframe=azulborde, leftrule=2mm, arc=1mm, boxrule=0.5pt, top=1.5mm, bottom=1.5mm]
+\small\ttfamily
 \#include <stdio.h>\\
 \#include <string.h>\\[1mm]
 int main(void) \{\\
@@ -382,12 +232,17 @@ int main(void) \{\\
 \}
 \end{tcolorbox}
 
-\newpage
-% EJERCICIO 4: EVIDENCIA EN TAMAÑO COMPLETO
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
-\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 4}
+\vspace{1mm}
+\begin{tcolorbox}[colback=fondoresaltado, colframe=bordeverde, arc=1mm, boxrule=0.5pt, top=1.2mm, bottom=1.2mm]
+\footnotesize
+\textbf{Espacios completados en el código:}\\
+$\bullet$ \textbf{Espacio 1:} \texttt{--ini} -- PUSH\_TOP: decrementa ini e inserta en el extremo frontal.\\
+$\bullet$ \textbf{Espacio 2:} \texttt{fin++} -- PUSH\_BOTTOM: inserta en el extremo posterior e incrementa fin.\\
+$\bullet$ \textbf{Espacio 3:} \texttt{ini++} -- POP\_TOP: elimina del extremo frontal avanzando ini.\\
+$\bullet$ \textbf{Espacio 4:} \texttt{fin--} -- POP\_BOTTOM: elimina del extremo posterior retrocediendo fin.
 \end{tcolorbox}
-\vspace{2mm}
+
+\vfill
 \begin{center}
 \includegraphics[width=0.98\textwidth]{captura_ejercicio4.png}
 \end{center}
@@ -395,43 +250,14 @@ int main(void) \{\\
 \newpage
 
 % ========================================================
-% EJERCICIO 5: DESCRIPCIÓN Y CÓDIGO
+% PÁGINA 5: EJERCICIO 5
 % ========================================================
-\begin{tcolorbox}[colback=azulunap, colframe=azulunap, coltext=white, fontupper=\large\bfseries, arc=2mm, top=2mm, bottom=2mm]
-Ejercicio 5: Personas vetadas y recorrido inverso
-\end{tcolorbox}
+\noindent\textbf{\large 5. Personas vetadas y recorrido inverso.}\\
+{\small Lea exactamente diez nombres, excluya Santiago, Pedro, Ariadna, Marco, Juan y Angel. Imprima la cantidad admitida y sus nombres desde el último hasta el primero, utilizando un arreglo como pila.}
 
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, arc=1mm, boxrule=0.5pt, top=2mm, bottom=2mm]
-\textbf{Enunciado Oficial:} Lea exactamente diez nombres, excluya Santiago, Pedro, Ariadna, Marco, Juan y Angel. Imprima la cantidad admitida y sus nombres desde el último hasta el primero, utilizando un arreglo como pila.
-\end{tcolorbox}
-
-\noindent{\textbf{\color{azulunap} ANÁLISIS Y FUNDAMENTACIÓN ALGORÍTMICA:}}\\
-{\small El problema filtra exactamente 10 cadenas leídas mediante conjunción booleana. Al detectar un nombre apto, se almacena en la pila ($pila[tope++] = nombre[i]$). Posteriormente se reporta la cantidad de admitidos ($printf(\dots, tope)$). Finalmente, mediante un ciclo $while (tope > 0)$, se desapilan e imprimen los elementos en orden inverso gracias al pre-decremento ($pila[{-}{-}tope]$), satisfaciendo la disciplina LIFO.}
-
-\vspace{2mm}
-\noindent{\textbf{\color{azulunap} TABLA DE RESPUESTAS -- ESPACIOS COMPLETADOS:}}
-\vspace{1mm}
-\begin{center}
-\small
-\begin{tabular}{|p{0.28\textwidth}|p{0.25\textwidth}|p{0.41\textwidth}|}
-\hline
-\rowcolor{fondocaja}\textbf{Espacio Evaluado} & \textbf{Código Completado} & \textbf{Justificación Técnica / Algorítmica} \\
-\hline
-Espacio 1: Exclusión 'Angel' & \codigoResaltado{strcmp(nombre[i], "Angel") != 0} & Verifica que el nombre no coincida con el sexto integrante vetado. \\
-\hline
-Espacio 2: Apilado & \codigoResaltado{tope++} & Guarda la cadena admitida en el tope e incrementa el contador. \\
-\hline
-Espacio 3: Cantidad total & \codigoResaltado{tope} & Entrega el número total de registros admitidos en la pila. \\
-\hline
-Espacio 4: Desapilado inverso & \codigoResaltado{--tope} & Pre-decrementa el cursor para imprimir desde el último al primero. \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{1mm}
-\noindent{\textbf{\color{azulunap} CÓDIGO FUENTE EN C (\texttt{ejercicio5.c}) CON ESPACIOS RESALTADOS:}}
-\begin{tcolorbox}[colback=fondocodigo, colframe=fondocodigo, arc=1.5mm, top=2mm, bottom=2mm]
-\small\color{textocodigo}\ttfamily
+\vspace{1.5mm}
+\begin{tcolorbox}[colback=fondocodigo, colframe=azulborde, leftrule=2mm, arc=1mm, boxrule=0.5pt, top=1.5mm, bottom=1.5mm]
+\small\ttfamily
 \#include <stdio.h>\\
 \#include <string.h>\\[1mm]
 int main(void) \{\\
@@ -456,12 +282,17 @@ int main(void) \{\\
 \}
 \end{tcolorbox}
 
-\newpage
-% EJERCICIO 5: EVIDENCIA EN TAMAÑO COMPLETO
-\begin{tcolorbox}[colback=fondocaja, colframe=azulborde, leftrule=3mm, top=2mm, bottom=2mm]
-\large\textbf{\color{azulunap} Evidencia de Ejecución en Consola -- Ejercicio 5}
+\vspace{1mm}
+\begin{tcolorbox}[colback=fondoresaltado, colframe=bordeverde, arc=1mm, boxrule=0.5pt, top=1.2mm, bottom=1.2mm]
+\footnotesize
+\textbf{Espacios completados en el código:}\\
+$\bullet$ \textbf{Espacio 1:} \texttt{strcmp(nombre[i], "Angel") != 0} -- Excluye al sexto nombre vetado ('Angel').\\
+$\bullet$ \textbf{Espacio 2:} \texttt{tope++} -- Apila la persona admitida e incrementa el contador tope.\\
+$\bullet$ \textbf{Espacio 3:} \texttt{tope} -- Imprime la cantidad total de personas admitidas.\\
+$\bullet$ \textbf{Espacio 4:} \texttt{--tope} -- Desapila e imprime en orden inverso (LIFO).
 \end{tcolorbox}
-\vspace{2mm}
+
+\vfill
 \begin{center}
 \includegraphics[width=0.98\textwidth]{captura_ejercicio5.png}
 \end{center}
